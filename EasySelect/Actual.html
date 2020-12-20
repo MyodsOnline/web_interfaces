@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Актуализация расчетной модели</title>
+		<link rel="stylesheet" type="text/css" href="css/Actual.css" />
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/boo.js"></script>
+		<link rel="stylesheet" href="css/lightbox.css">
+		<script src="js/lightbox-plus-jquery.min.js"></script>
+<!--		
+		<link rel="stylesheet" type="text/css" href="css/EasySelect.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/jquery.cbpContentSlider.min.js"></script>
+-->
+	</head>
+	
+	<body>
+		
+		<header>
+			<ul>
+				<li class="navLi tit" id="PA"><a href="#">Порядок актуализации</a></li>
+				<li class="navLi navLi_show"><a href="" >Сечение 10</a></li>
+				<li class="navLi navLi_show"><a href="" >СН Северо-Западной ТЭЦ</a></li>
+				<li class="navLi navLi_show"><a href="" >Объем САОН С-З</a></li>
+				<li class="navLi navLi_show"><a href="" >Балансирующий узел</a></li>
+				<li class="navLi navLi_show"><a href="" >Фиктивные генераторы</a></li>
+				<li class="navLi tit" id="CE"><a href="#" >Cхемы электропередачи</a></li>
+				<li class="navLi navLi_hide" id="navLiFirst"><a href="#first" >Электропередача РФ-Фин = 0</a></li>
+				<li class="navLi navLi_hide" id="navLiSecond"><a href="#second" >Передача осуществляется только с общих шин КВПУ (схема 4)</a></li>
+				<li class="navLi navLi_hide" id="navLiThird"><a href="#third" >Передача через КВПУ и выделенный блок Северо-Западной ТЭЦ через АТ-3 (схема 1)</a></li>
+				<li class="navLi navLi_hide" id="navLiFourth"><a href="#fourth" >Передача только через выделенный на изолированую работу блок Северо-Западной ТЭЦ</a></li>
+				<li class="navLi navLi_hide" id="navLiFiveth"><a href="#fiveth" >Работа электропередачи по резервной схеме №2,3 (с выделеным от общих шин КВПУ)</a></li>
+			</ul>
+		</header>
+		
+		<main>
+			<h1 style="margin-top:10px;">Дополнительные сведения об актуализируемых параметрах</h1>
+<!-- 			
+			<nav>
+				<a href="">Сечение 10</a>
+				<a href="">СН С-З ТЭЦ</a>
+				<a href="">gen110,111</a>
+			</nav>
+ -->			
+			<section class="description spravka">
+				<h4>Как определить диапазон сечения 10 при изменении схемы электропередачи или возникновении ограничений?</h4>
+				<div class="spravkaFiret">
+					<div class="spravkaTwo">
+						<p>При возникновении ограничений передачи в первую очередь ограничивается величина прямой торговли.</p>
+						<p>Например, для запланированного режима электропередачи, в котором диапазон сечения 10 составляет: Р<sub>min10</sub>=760 МВт и P<sub>max10</sub>=900 МВт, при возникновении ограничений возможны следующие варианты:</p></div>
+						<div class="spravkaOne">Пример:<br/><img src="img/act/10_1.png" width="190px"></div>
+				</div>
+				<ul class="spravkaUl">
+					<li id="no1">
+						<div class="colsFirst">
+							<strong>1.</strong> если заданная мощность <span class="spravkaUlSpanColor">Р<sub>задан</sub></span> находится внутри заданного диапазона сечения 10 и ограничивает <span class="spravkaUlSpan">максимум</span> <span class="spravkaUlSpanColor">Р<sub>max10</sub></span>, то новый диапазон сечения будет равен:
+						</div>
+						<div class="colsSecond">
+							<div class="colsThird" style="margin-right:15px;">
+								[ Р<sub>min10</sub> ; Р<sub>задан</sub> ]
+							</div>
+							<div class="colsThird">
+								<img src="img/act/10_2.png" width="160px">
+							</div>
+						</div>
+					</li>
+					<li id="no2">
+						<div class="colsFirst">
+							<strong>2.</strong> если заданная мощность <span class="spravkaUlSpanColor">Р<sub>задан</sub></span> находится внутри заданного диапазона сечения 10 и ограничивает <span class="spravkaUlSpan">минимум</span> <span class="spravkaUlSpanColor">Р<sub>min10</sub></span>, то новый диапазон сечения будет равен:
+						</div>
+						<div class="colsSecond">
+							<div class="colsThird" style="margin-right:15px;">
+								[ Р<sub>задан</sub> ; Р<sub>max10</sub> ]
+							</div>
+							<div class="colsThird">
+								<img src="img/act/10_3.png" width="160px">
+							</div>
+						</div>
+					</li>
+					<li id="no3">
+						<div class="colsFirst">
+							<strong>3.</strong> если заданная мощность <span class="spravkaUlSpanColor">Р<sub>задан</sub></span> <span class="spravkaUlSpan">больше заданного максимума сечения 10</span> <span class="spravkaUlSpanColor">Р<sub>max10</sub></span>, то новый диапазон сечения будет равен:
+						</div>
+						<div class="colsSecond">
+							<div class="colsThird" style="margin-right:15px;">
+								[Р <sub>min</sub> = <p class="JSstyle">Р<sub>задан</sub></p> = Р<sub>max</sub> ]
+							</div>
+							<div class="colsThird">
+								<img src="img/act/10_5.png" width="160px">
+							</div>
+						</div>
+					</li>
+					<li id="no4">
+						<div class="colsFirst">
+							<strong>4.</strong> если заданная мощность <span class="spravkaUlSpanColor">Р<sub>задан</sub></span> <span class="spravkaUlSpan">меньше заданного минимума сечения 10</span> <span class="spravkaUlSpanColor">Р<sub>min10</sub></span>, то новый диапазон сечения будет равен:
+						</div>
+						<div class="colsSecond">
+							<div class="colsThird" style="margin-right:15px;">
+								[Р <sub>min</sub> = Р<sub>задан</sub> = Р<sub>max</sub> ]
+							</div>
+							<div class="colsThird">
+								<img src="img/act/10_4.png" width="160px">
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			
+			<section class="description spravka">
+				<h4>Выделенная работа блока Северо-Западной ТЭЦ на ЭС Финляндии.</h4>
+				<div class="spravkaFiret">
+					<p>При необходимости изменения схемы трансграничной передачи с переводом одного из блоков Северо-Западной ТЭЦ на выделенную работу на ЭС Финляндии необходимо учесть ряд нюансов.</p>
+				</div>
+				<ul class="spravkaUl">
+					<li>
+						<div class="colsSix">
+							<strong>1.</strong> Собственные нужды блока, работающего выделенно на ЭС Финляндии <span class="spravkaUlSpanColor">[ Р<sub>сн_фин </sub>]</span>.
+						</div>
+						<div class="colsSeven">
+							<p>При расчете очередного ПБР, в котором необходимо учесть перевод блока Северо-Западной ТЭЦ из энергосистемы России на энергосистему Финляндии и обратно, необходимо корректно учесть величину собственных нужд блока, Работающего на ЭС Финляндии <span class="spravkaUlSpanColor">[ Р<sub>сн_фин </sub>]</span>.</p>
+							<p>В расчетной модели Барса собственные нужды блока, работающего выделенно на ЭС Финляндии, отнесены к категориям:</p>
+							<p>1. <strong>Мегагрид &#8594; Узлы &#8594; 3594 &#8594; параметр «P<sub>Н</sub>»</strong></p>
+							<p>2. <strong>Мегагрид &#8594; Потребители &#8594; 319 &#8594; параметр «P<sub>заяв</sub>»</strong></p>
+							<p>После завершения расчета мегаточки ПБР нужно откорректировать оба указаных параметра, и повторно сохранить и заархивировать мегаточку.</p>
+							
+							<p>В расчетной модели Modes'a в нормальном, плановом режиме величина собственных нужд выделенного блока Северо-Западной ТЭЦ в узле <span class="vImportant">3594</span> не закладывается, <strong>т.к. этот параметр указывается персоналом Северо-Западной ТЭЦ на технологическом сайте СО</strong>.</p>
+							<p>Однако, при оперативном изменении схемы выдачи мощности, соответствующий параметр в Modes должен быть заполнен вручную.</p>
+							<p>Величина собственных нужд одного блока Северо-Западной ТЭЦ составляет (ориентировочно) 8 МВт. Однако, при оперативном изменении схемы, рекомендуется проконсультироваться со знающими людьми, например НСС Северо-Западной ТЭЦ.</p>
+						</div>
+					</li>
+					<li>
+						<div class="colsSix">
+							<strong>2.</strong> Изменения, вносимые в файл <span class="spravkaUlSpanColor">PurSechs.xls</span>.
+						</div>
+						<div class="colsSeven">
+							<p style="text-indent:12px;">При изменении схемы и объема выдачи мощности в ЭС Финляндии через ПС Выборгская, возможно изменится объем ПА САОН Северо-Запада, влияющий на величину МДП в сечении Центр-Северо-Запад. <br/>				Для корректного расчёта объема САОН Северо-Запада рекомендуется использовать <a href="K:\diop\Ярлыки ДИОП-официально\PurSechs.xls">PurSechs.xls</a>, располженный в каталоге <a href="K:\diop\Ярлыки ДИОП-официально">K:\diop\Ярлыки ДИОП-официально</a>.</p>
+							<p style="text-indent:12px;">Объем САОН Северо-Запада, в части отключения нагрузки на ПС 400 кВ Выборгская, определяется формулой:</p><br/>
+							<p style="display:block; text-align:center; font-size:1.15em"><strong>Р<sub>САОН</sub> = Р<sub>Р-Ф</sub> – Р<sub>КВПУ без КУМ</sub> – Р<sub>АТ-3</sub> – N*115 &le; 550 МВт</strong></p></br>
+							<table style="font-size:.8em;">
+							<tr><td>где:</td><td>Р<sub>САОН</sub></td><td>располагаемый объем САОН;</td></tr>
+							<tr><td></td><td>Р<sub>Р-Ф</sub></td><td>переток Россия – Финляндия;</td></tr>
+							<tr><td></td><td>Р<sub>КВПУбезКУРМ</sub></td><td>загрузка КВПУ, не подключенных к КУРМ или работающих блоком;</td></tr>
+							<tr><td></td><td>Р<sub>АТ-3</sub></td><td>загрузка АТ-3 330/400кВ транзитной мощностью от Северо–Западной ТЭЦ;</td></tr>
+							<tr><td></td><td>N</td><td>количество работающих КВПУ, подключенных к КУРМ;</td></tr>
+							<tr><td></td><td>115 МВт</td><td>технологический минимум нагрузки КВПУ.</td></tr>
+							</table>
+							<a class="button15" id="toggle">Подсказка для PurSechs</a>
+							<!-- <button id="toggle">Показать картинки</button> -->
+							<div class="frame">
+								<p>В файле PurSechs.xls:<br/><br/>
+								1. Актуализировать значение суммарной передачи в Финляндию (столбец <span class="vImportant">"О"</span> на закладке <span class="vImportant">"Исходные данные"</span>).<br/>
+								2. В случае, если блок Северо-Западонй ТЭЦ непланово 	переводится на ЭС Финляндии (или обратно / отключается), то на закладке <span class="vImportant">"Схема"</span> соответствующему блоку проставить "1" как признак работы на ЭС Финляндии или "0", если блок работает на ЭС России или не в работе.<br/>
+								3. На закладке <span class="vImportant">"Исходные данные"</span> в столбце <span class="vImportant">"U"</span> проставить собственные нужды блока блока, выделенно работающего на ЭС Финляндии.
+								</p>
+								<div class="colsEight">
+									<a href="img/act/10_7.png" class='gallery' data-lightbox="roadtrip"><img src="img/act/10_7.png" height="120px"></a>
+									<a href="img/act/10_8.png" class='gallery' data-lightbox="roadtrip"><img src="img/act/10_8.png" height="120px"></a>
+									<a href="img/act/10_7.png" class='gallery' data-lightbox="roadtrip"><img src="img/act/10_7.png" height="120px"></a>
+								</div>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="colsSix">
+							<strong>3.</strong> Изменения, необходимые для корректного формирования файла <span class="spravkaUlSpanColor">ListPBR.xls</span>.
+						</div>
+						<div class="colsSeven">
+							<p>На основании <strong>технологического распоряжения №82 от 16.12.2011</strong> <a href="docs/№82 от 16.12.2011 об особенностях работы АРМ ДИОП.pdf" target="_blank">об особенностях работы с АРМ ДИОП</a>, если в расчете ПБР была изменена схема трансграничной электропередачи, связанная с переводом или отключением блока Северо-западной ТЭЦ, работающего на ЭС Финляндии, необходимо:</p>
+							<p>1. Найти и открыть файл на соответствующую дату Fin_export_<ДД>.<ММ>.<ГГГГ>.xls, расположеный в каталоге <a href="S:/arm/pres_sutki/fsk_fin">S:/arm/pres_sutki/fsk_fin</a></p>
+							<p>2. Выполнить все указания инструкции.</p>
+						</div>
+					</li>
+					<li>
+						<div class="colsSix">
+							<strong>4.</strong> <span class="spravkaUlSpanColor">Балансирующий узел</span> при работе выделенного блока Северо-Западной ТЭЦ на ЭС Финляндии и нулевой передаче через КВПУ.
+						</div>
+						<div class="colsSeven">
+							<p>Для корректного расчёта схемы, при которй трансграничная электропередача осуществляется только через выделенный блок Северо-Западной ТЭЦ (переток через КВПУ при этом = 0), необходимо разместить балансирующий узел в узле расчетной модели <span class="vImportant">[3959]</span>.</p>
+							<p>См. <a href="#fourth">пример схемы</a></p>
+							<p>Пример строки sm.csv файла: <span class="red">12;7;12;3959;0;0;1;;;;</span></p>
+							<p>Аналогично для Modes:</p>
+							<img src="img/act/10_6.png" style="display:block; position:relative; margin:0 auto; max-width:55%; max-height:150px;">
+						</div>
+					</li>
+				</ul>
+			</section>
+			
+			<section class="description spravka">
+				<h4>Фиктивные генераторы расчетной модели электропередачи.</h4>
+				<div class="spravkaFiret">
+					<p>В расчетной модели Барса потребление энергосистемы Финляндии задано при помощи фиктивных генераторов.</p>
+					<p>Актуализация их параметров происходит на этапе формирования ППБР в файлах gen.csv и agregm.csv. Убедиться в этом можно перейдя по <a href="S:\ARM\CSV\REZ">ссылке</a>. В файлах, выгружаемых из Modes, используемых при расчетах мегаточки ПБР, параметров этих фиктивных генераторв нет. Нет их и в Modes.</p>
+					<p>При необходимости изменения режима работы трансграничной электропередачи во время расчета мегаточки очередного ПРБ, задавать параметры фиктивных генераторов нужно "вручную", руководствуясь следующими принципами:</p>
+				</div>
+				<ul class="spravkaUl">
+					<li>
+						<div class="colsSix">
+							<strong>Фиктивный генератор gen110.</strong> <p style="font-size:0.7em; margin-top:7px;">Имитирует потребление суммарной мощности, передаваемой в энергосистему Финляндии.</p>
+						</div>
+						<div class="colsSeven">
+							<p>В расчетной модели gen110 находится в узле <span class="vImportant">№3450</span>. Задается в файле gen.csv со знаком «-». <br/>В файле agregm.csv описывает величину технической пропускной способности.</p>
+							<p>При изменении планового значения передачи мощности в csv файлах соответствующего ПБР нужно задать параметры нового графика передачи мощности.<br/>Так для нового графика <span class="spravkaUlSpanColor">[Р<sub>задан</sub>]</span> :</p>
+							<p>gen.csv: 
+								<span class="red">110;1;-P<sub>задан</sub>;;0;1;0</span>
+							</p>
+							<p>agregm.csv: 
+								<span class="red">110;1;350;-1400;0;0;0;0;0;0</span>
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="colsSix">
+							<strong>Фиктивный генератор gen111.</strong> <p style="font-size:0.7em; margin-top:7px;">Имитирует потребление мощности, передаваемой в энергосистему Финляндии через выделенное КВПУ-4.</p>
+						</div>
+						<div class="colsSeven">
+							<p>В расчетной модели gen111 находится в узле <span class="vImportant">№3454</span>. Задается в файле gen.csv со знаком «-». В файле agregm.csv описывает величину технической пропускной способности выделенного КВПУ.</p>
+							<p>При изменении планового значения передачи мощности в csv файлах соответствующего ПБР нужно задать параметры нового грaфика передачи мощности через выделенное КВПУ-4.<br/>
+							Tак для нового графика <span class="spravkaUlSpanColor">[Р<sub>задан КВПУ-4</sub>]</span> :</p>
+							<p>gen.csv: 
+								<span class="red">111;1;-P<sub>задан КВПУ-4</sub>;;0;1;0</span>
+							</p>
+							<p>agregm.csv: 
+								<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</section>
+			
+			<h1>Описание схем электропередачи</h1>
+			
+			<section class="description" id="first">
+				<h2>Расчётная модель при нулевой передаче.</h2>
+				<img src="img/act/First.svg" width="80%" style="display:block; position:relative; margin:0 auto 20px;">
+				<div class="comment">
+					<h3>Описание схемы:</h3>
+					<p>Для корректного расчета, при нулевой передаче, в работе должна оставаться отлько одна линия 400кВ, традиционно это Лн-2.<br/>
+					Связь через АТ-3 ПС Выборгская отключена. Оба блока Северо-Западной ТЭЦ работают на ЭС России, собственные нужды блоков Северо-Западной ТЭЦ расположены в узле <span class="vImportant">[3673]</span>.</p>
+				</div>
+				<div class="csvFiles">
+					<div class="csv sm">
+						<h4>sm.csv</h4>
+						<p class="smToggle__first-show">
+						<span>Отличие от БМт в этой схеме заключается в отключеном состоянии Лн-1. В работе только Лн-2.</span><br/><br/>
+						<span class="red">0;1;24;3453;0;0;0</span>		Юлликкяля II <br/>
+						<span class="red">4;1;24;3453;3450;0;0</span>	(нн) 	Юлликкяля II - Финляндия 
+						<span class="red">4;1;24;3441;3453;0;0</span>	ВЛ-400 	Выборгская – Юликкяля (ЛЛн-3)(через КВПУ-общее)<br/>
+						<span class="red">0;1;24;3451;0;0;0</span>		Кюми<br/>
+						<span class="red">4;1;24;3451;3450;0;0</span>		(нн) Кюми - Финляндия <br/>
+						<span class="red">4;1;24;3441;3451;0;0</span>		ВЛ-400 Выборгская – Кюми (ЛЛн-1) (через КВПУ-общее)
+						</p>
+						<p class="smToggle__first-hide">
+						<span class="red">4;1;24;3590;3593;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3590;3594;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3593;3673;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3590;3673;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3593;3594;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3673;0;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3594;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3905;3958;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3594;3958;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3958;0;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3905;0;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3950;0;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3960;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3950;3905;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3955;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3955;3960;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3951;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3951;3955;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3905;3951;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3952;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3952;3955;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3905;3952;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3953;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3953;3955;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3905;3953;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3954;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3954;3960;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3950;3954;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3960;3444;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3444;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3444;3454;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3454;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3959;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3444;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3955;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3441;0;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3450;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3959;3958;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3959;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3959;3455;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3455;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3455;3450;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3453;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3453;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3453;3450;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3452;0;1;0;0;</span><br/>
+						<span class="red">0;1;24;3452;0;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3452;3450;0;1;0;0;</span><br/>
+						<span class="red">4;1;24;3441;3451;0;0;0;0;</span><br/>
+						<span class="red">0;1;24;3451;0;0;0;0;0;</span><br/>
+						<span class="red">4;1;24;3451;3450;0;0;0;0;</span><br/>
+						</p>
+						
+						<form>
+							<input type="checkbox" class="smToggle" id="smToggle__first">   показать полное описание схемы.<br/>
+						</form>
+
+					</div>
+					<div class="csv sech">
+						<span>С сечения 10 снимаем ограничения, остается на контроле;</br>Сечение 28 без ограничений, не на контроле;</br>Сечение 129 без ограничений, не на контроле;</br>Сечения [11-14] на контроле, если КВПУ в работе.</span>
+						<h4>sech.csv</h4>
+						<p>
+							<span class="red">10;1;0;0;1;3;</span>	Россия - Финляндия<br/>
+							<span class="red">28;1;9999;-9999;0;3;</span>	Выборг-Финляндия(КВПУ)<br/>
+							<span class="red">129;1;9999;-9999;0;0;</span>	Выделенное КВПУ (Фин)<br/>
+							<span class="red">11;1;350;-10;1;0;</span> КВПУ-1<br/>
+							<span class="red">12;1;350;-10;1;0;</span> КВПУ-2<br/>
+							<span class="red">13;1;350;-10;1;0;</span> КВПУ-3<br/>
+							<span class="red">14;1;350;-10;1;0;</span> КВПУ-4
+						</p>
+					</div>
+					<div class="csv gen">
+						<span>Для актуализации схемы в рабочих файлах для фиктивных агрегатов нужно указать:</span>
+						<h4>gen.csv</h4>
+						<p>
+						<span class="red">110;1;0;;0;1;0</span><br/>
+						<span class="red">111;1;0;;0;1;0</span>
+						</p>
+						<h4>agregm.csv</h4>
+						<p>
+						<span class="red">110;1;350;-1400;0;0;0;0;0;0</span><br/>
+						<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+						</p>
+
+					</div>
+				</div>
+			</section>
+			
+			<section class="description" id="second">
+				<h2>Передача осуществляется с общих шин 400кВ ПС Выборгская.</h2>
+				<img src="img/act/Second.svg" width="80%" style="display:block; position:relative; margin:0 auto 20px;">
+				<div class="comment">
+					<h3>Описание схемы:</h3>
+					<p>Оба блока Северо-Западной ТЭЦ работают на ЭС России Собственные нужды блоков Северо-Западной ТЭЦ расположены в узле <span class="vImportant">[3673]</span>.<br/>Передача происходит по трём линиям 400кВ (Лн-1, Лн-2, Лн-3), работающих на общие шины 400кВ ПС Выборгская.</p>
+					<p>Пропускная способность ограничена <span class="vImportant">1000 МВт</span>.</p>
+					<p>Например, для плановой передачи 900МВт с учетом прямой торговли и всех 4х КВПУ в работе:</p>
+				</div>
+				<div class="csvFiles">
+					<div class="csv sm">
+						<h4>sm.csv</h4>
+						<p class="smToggle__second-show">
+						<span>Отличия от базовой мегаточки:</span>
+							<span class="red">4;1;24;3590;3593;0;1;0;0;</span>	Перемычка между блоками<br/>
+							<span class="red">4;1;24;3441;3453;0;1;0;0;</span>	Лн—3 при работе от КВПУ<br/>
+							<span class="red">0;1;24;3453;0;0;1;0;0;</span>	узел Лн-3 при работе от КВПУ<br/>
+							<span class="red">4;1;24;3453;3450;0;1;0;0;</span>	Лн—3фин при работе от КВПУ<br/>
+
+						</p>
+						<p class="smToggle__second-hide">
+							<span class="red">	4;1;24;3590;3593;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3590;3594;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3593;3673;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3590;3673;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3593;3594;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3673;0;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3594;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3905;3958;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3594;3958;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3958;0;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3905;0;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3950;0;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3960;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3950;3905;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3955;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3955;3960;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3951;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3951;3955;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3905;3951;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3952;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3952;3955;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3905;3952;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3953;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3953;3955;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3905;3953;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3954;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3954;3960;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3950;3954;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3960;3444;0;0;0;0;	</span><br/>
+							<span class="red">	0;1;24;3444;0;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3444;3454;0;0;0;0;	</span><br/>
+							<span class="red">	0;1;24;3454;0;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3959;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3444;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3955;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3441;0;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3450;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3959;3958;0;0;0;0;	</span><br/>
+							<span class="red">	0;1;24;3959;0;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3959;3455;0;0;0;0;	</span><br/>
+							<span class="red">	0;1;24;3455;0;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3455;3450;0;0;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3453;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3453;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3453;3450;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3452;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3452;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3452;3450;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3441;3451;0;1;0;0;	</span><br/>
+							<span class="red">	0;1;24;3451;0;0;1;0;0;	</span><br/>
+							<span class="red">	4;1;24;3451;3450;0;1;0;0;	</span><br/>
+
+						</p>
+						
+						<form>
+							<input type="checkbox" id="smToggle__second">   показать полное описание схемы.<br/>
+						</form>
+
+					</div>
+					<div class="csv sech">
+						<span>Сечение 10 на контроле;</br>Сечение 28 на контроле;</br>Сечение 129 без ограничений, не на контроле;</br>Сечения [11-14] на контроле, если КВПУ в работе.</span>
+						<h4>sech.csv</h4>
+						<p>
+						<span class="red">10;1;900;760;1;3;</span>	Россия - Финляндия<br/>
+						<span class="red">28;1;900.1;130;1;3;</span>	Выборг-Финляндия(КВПУ)<br/>
+						<span class="red">129;1;9999;-9999;0;0;</span>	Выделенное КВПУ (Фин)<br/>
+						<span class="red">11;1;350;-10;1;0;</span> КВПУ-1<br/>
+						<span class="red">12;1;350;-10;1;0;</span> КВПУ-2<br/>
+						<span class="red">13;1;350;-10;1;0;</span> КВПУ-3<br/>
+						<span class="red">14;1;350;-10;1;0;</span> КВПУ-4
+						</p>
+					</div>
+					<div class="csv gen">
+						<span>Для актуализации схемы в рабочих файлах для фиктивных агрегатов нужно указать:</span>
+						<h4>gen.csv</h4>
+						<p>
+						<span class="red">110;1;-760;;0;1;0</span><br/>
+						<span class="red">111;1;0;;0;1;0</span>
+						</p>
+						<h4>agregm.csv</h4>
+						<p>
+						<span class="red">110;1;350;-1400;0;0;0;0;0;0</span><br/>
+						<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+						</p>
+
+					</div>
+				</div>
+			</section>
+			
+			<section class="description" id="third">
+				<h2>Схема №1. На финов работает выделенный блок С-З ТЭЦ и КВПУ.</h2>
+				<img src="img/act/Third.svg" width="80%" style="display:block; position:relative; margin:0 auto 20px;">
+				<div class="comment">
+					<h3>Описание схемы:</h3>
+					<p>Выделенный от сети ЕЭС России блок Северо-Западной ТЭЦ через АТ-3, выделенный от общих шин 330 и 400 кВ ПС Выборгская и линия 400 кВ Лн-3, работают на ПС Юлликкяля.<br/>Собственные нужды Блока, работающего на ЭС Финляндии находятся в узле <span class="vImportant">[3594]</span>.<br/>Собственные нужды Блока, работающего на ЭС России находятся в узле <span class="vImportant">[3673]</span>.</p>
+					<p>Линии Лн-1 и Лн-2 работают на шины 400 кВ ПС Выборгскя.</p>
+					<p>Например, для передачи 1300МВт с учетом прямой торговли и всех 4х КВПУ в работе:</p>
+
+				</div>
+				<div class="csvFiles">
+					<div class="csv sm">
+						<span>Пример схемы. Бл-1 работает выделенно на ЭС Финляндии.<br/>
+						<h4>sm.csv</h4>
+						
+						<p class="smToggle__third-show">
+						<span>Отличие от БМт</span><br/><br/>
+						
+						<span class="red">	4;1;24;3590;3673;0;0;0;0;	</span>	Бл-1 - россйские шины СЗ-ТЭЦ	<br/>
+						<span class="red">	4;1;24;3593;3594;0;0;0;0;	</span>	Бл-2 - финские шины СЗ-ТЭЦ	<br/>
+						<span class="red">	4;1;24;3905;3958;0;0;0;0;	</span>	Откл. АТ-3 от шин ПС Выборгская	<br/>
+						<span class="red">	4;1;24;3959;3958;0;1;0;0;	</span>	АТ-3	<br/>
+						<span class="red">	0;1;24;3959;0;0;1;0;0;	</span>	узел АТ-3 400кВ	<br/>
+						<span class="red">	4;1;24;3959;3455;0;1;0;0;	</span>	Лн-3 при работе от АТ-3	<br/>
+						<span class="red">	0;1;24;3455;0;0;1;0;0;	</span>	узел Лн-3 при работе от АТ-3	<br/>
+						<span class="red">	4;1;24;3455;3450;0;1;0;0;	</span>	Лн-3фин при работе от АТ-3	<br/>
+
+						</p>
+						
+						<p class="smToggle__third-hide">
+						<span class="red">	4;1;24;3590;3593;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3594;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3673;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3673;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3594;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3673;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3594;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3958;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3594;3958;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3958;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3905;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3950;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3960;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3905;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3955;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3955;3960;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3951;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3951;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3951;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3952;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3952;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3952;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3953;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3953;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3953;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3954;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3954;3960;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3954;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3960;3444;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3444;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3444;3454;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3454;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3959;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3444;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3955;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3441;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3450;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3958;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3959;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3455;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3455;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3455;3450;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3453;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3453;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3453;3450;0;0;0;0;	</span><br/>
+
+						</p>
+						
+						<form>
+							<input type="checkbox" id="smToggle__third">   показать полное описание схемы.<br/>
+						</form>
+
+					</div>
+					<div class="csv sech">
+						<span>Сечение 10 на контроле;</br>Сечение 28 на контроле;</br>Сечение 129 без ограничений, не на контроле;</br>Сечения [11-14] на контроле, если КВПУ в работе.</span>
+						<h4>sech.csv</h4>
+						<p>
+						<span class="red">10;1;1300;1160;0;3;</span>	Россия - Финляндия<br/>
+						<span class="red">28;1;900.1;130;1;3;</span>	Выборг-Финляндия(КВПУ)<br/>
+						<span class="red">129;1;9999;-9999;0;0;</span>	Выделенное КВПУ (Фин)<br/>
+						<span class="red">11;1;350;-10;1;0;</span> КВПУ-1<br/>
+						<span class="red">12;1;350;-10;1;0;</span> КВПУ-2<br/>
+						<span class="red">13;1;350;-10;1;0;</span> КВПУ-3<br/>
+						<span class="red">14;1;350;-10;1;0;</span> КВПУ-4
+						</p>
+					</div>
+					<div class="csv gen">
+						<span>Для актуализации схемы в рабочих файлах для фиктивных агрегатов нужно указать:</span>
+						<h4>gen.csv</h4>
+						<p>
+						<span class="red">110;1;-1160;;0;1;0</span><br/>
+						<span class="red">111;1;0;;0;1;0</span>
+						</p>
+						<h4>agregm.csv</h4>
+						<p>
+						<span class="red">110;1;350;-1400;0;0;0;0;0;0</span><br/>
+						<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+						</p>
+
+					</div>
+				</div>
+				<div class="barsHelp">
+					<p style="text-indent:15px;">При работе Электропередачи по схеме №1, в случае изменения плановых ограничений, необходимо:<br/>
+					<br/>
+					&mdash; Oценить максимально возможную величину передаваемой мощности Р<sub>MaxЗАДАН</sub>,<br/>
+					<br/>
+					P<sub>MaxЗАДАН</sub> = P<sub>MaxС-ЗТЭЦ/ФИН</sub> + P<sub>MaxКВПУ</sub>,<br/>
+					<br/>
+					где:<br/>
+					P<sub>MaxКВПУ = Рмакс28</sub> – максимальная величина выдачи мощности от работающих на общие шины КВПУ с учётом зарезервированного диапазона на работу КУРМ на загрузку<br/>
+					P<sub>MaxС-З ТЭЦ/ФИН</sub> - расчетная максимальная величина мощности, передаваемая в ЭС Финляндии от С-З ТЭЦ, на границе, с учетом собственных нужд и потерь в сетях.</p>
+					<p>P<sub>MaxС-ЗТЭЦ/ФИН</sub> = (P<sub>MaxС-ЗТЭЦ</sub> – P<sub>СН С-ЗТЭЦ</sub>)-((P<sub>MaxС-ЗТЭЦ</sub> – P<sub>СН С-ЗТЭЦ</sub>)/330)<sup>2</sup>*7.26,<br/>
+					<br/>
+					где:<br/>
+					P<sub>MaxС-ЗТЭЦ</sub> – максимум блока С-З ТЭЦ работающего на ЭС Финляндии <br/>
+					P<sub>СН С-ЗТЭЦ</sub> – собственные нуждыблока С-З ТЭЦ работающего на ЭС Финляндии</p>
+					<p>Рассчитать величину P<sub>MaxС-ЗТЭЦ/ФИН</sub> можно используя <a href="\\fs\user\diop\ООП\Хелпики для ДИОП\Расчёт Электропередачи Россия-Финляндия.xls">ПО «Расчёт Электропередачи Россия-Финляндия»</a> находящееся в каталоге: <a href="\\fs\user\diop\ООП\Хелпики для ДИОП\">K:\diop\ООП\Хелпики для ДИОП</a> .<br/>
+					<br/>
+					&mdash; Проинформировать ДД ОДУ С-З о максимально возможной величине передаваемой мощности Р<sub>MaxЗАДАН</sub>, и согласовать с ним новый график передачи Р<sub>ЗАДАН</sub>.
+
+					</p>
+				</div>
+			</section>
+			
+			<section class="description" id="fourth">
+				<h2>Передача осуществляется только через выделенный на изолированую работу блок С-З ТЭЦ.</h2>
+				<img src="img/act/Fourth.svg" width="80%" style="display:block; position:relative; margin:0 auto 20px;">
+				<div class="comment">
+					<h3>Описание схемы:</h3>
+					<p>Выделенный от сети ЕЭС России блок Северо-Западной ТЭЦ, АТ-3, выделенный от общих шин 330 и 400 кВ ПС Выборгская и линия 400 кВ Лн-3, работают на ПС Юлликкяля.<br/>Собственные нужды Блока, работающего на ЭС Финляндии находятся в узле <span class="vImportant">[3594]</span>.<br/>Собственные нужды Блока, работающего на ЭС России находятся в узле <span class="vImportant">[3673]</span>.</p>
+					<p>Все КВПУ, линии Лн-1 и Лн-2 в расчетной модели отключены.</p>
+					<p>В узле <span class="vImportant">[3959]</span> необходимо разместить балансирующий узел.</p>
+					<p>Например, для отключенных КВПУ и генерации блока С-З ТЭЦ с диапазоном 305/404 МВт:</p>
+				</div>
+				<div class="csvFiles">
+					<div class="csv sm">
+						<h4>sm.csv</h4>
+						<p class="smToggle__fourth-show">
+						<span>Отличие от БМт</span><br/><br/>
+						<span class="red">	12;1;24;3959;0;0;1;0;0;;	</span>	Балансирующий узел<br/>
+						<span class="red">	4;1;24;3590;3594;0;0;0;0;	</span>	Бл-1 - финские шины СЗ-ТЭЦ	<br/>
+						<span class="red">	4;1;24;3593;3673;0;0;0;0;	</span>	Бл-2 - россйские шины СЗ-ТЭЦ	<br/>
+						<span class="red">	4;1;24;3905;3958;0;0;0;0;	</span>	Откл. АТ-3 от шин ПС Выборгская	<br/>
+						<span class="red">	0;1;24;3960;0;0;0;0;0;	</span>	Узел нн КВПУ-4	<br/>
+						<span class="red">	0;1;24;3955;0;0;0;0;0;	</span>	Шины нн КВПУ	<br/>
+						<span class="red">	4;1;24;3955;3960;0;0;0;0;	</span>	Перемычка между общими шинами нн и узлом нн КВПУ-4	<br/>
+						<span class="red">	0;1;24;3951;0;0;0;0;0;	</span>	КВПУ-1	<br/>
+						<span class="red">	4;1;24;3951;3955;0;0;0;0;	</span>	КВПУ-1	<br/>
+						<span class="red">	4;1;24;3905;3951;0;0;0;0;	</span>	КВПУ-1	<br/>
+						<span class="red">	0;1;24;3952;0;0;0;0;0;	</span>	КВПУ-2	<br/>
+						<span class="red">	4;1;24;3952;3955;0;0;0;0;	</span>	КВПУ-2	<br/>
+						<span class="red">	4;1;24;3905;3952;0;0;0;0;	</span>	КВПУ-2	<br/>
+						<span class="red">	0;1;24;3953;0;0;0;0;0;	</span>	КВПУ-3	<br/>
+						<span class="red">	4;1;24;3953;3955;0;0;0;0;	</span>	КВПУ-3	<br/>
+						<span class="red">	4;1;24;3905;3953;0;0;0;0;	</span>	КВПУ-3	<br/>
+						<span class="red">	0;1;24;3954;0;0;0;0;0;	</span>	КВПУ-4	<br/>
+						<span class="red">	4;1;24;3954;3960;0;0;0;0;	</span>	КВПУ-4	<br/>
+						<span class="red">	4;1;24;3950;3954;0;0;0;0;	</span>	КВПУ-4	<br/>
+						<span class="red">	4;1;24;3441;3955;0;0;0;0;	</span>	шины нн КВПУ – шины 400кВ	<br/>
+						<span class="red">	0;1;24;3441;0;0;0;0;0;	</span>	Общие шины КВПУ 400кВ	<br/>
+						<span class="red">	4;1;24;3959;3958;0;1;0;0;	</span>	АТ-3	<br/>
+						<span class="red">	0;1;24;3959;0;0;1;0;0;	</span>	узел АТ-3 400кВ	<br/>
+						<span class="red">	4;1;24;3959;3455;0;1;0;0;	</span>	Лн-3 при работе от АТ-3	<br/>
+						<span class="red">	0;1;24;3455;0;0;1;0;0;	</span>	узел Лн-3 при работе от АТ-3	<br/>
+						<span class="red">	4;1;24;3455;3450;0;1;0;0;	</span>	Лн-3фин при работе от АТ-3	<br/>
+						<span class="red">	4;1;24;3441;3452;0;0;0;0;	</span>	Лн—2	<br/>
+						<span class="red">	0;1;24;3452;0;0;0;0;0;	</span>	узел Лн—2	<br/>
+						<span class="red">	4;1;24;3452;3450;0;0;0;0;	</span>	Лн—2фин	<br/>
+						<span class="red">	4;1;24;3441;3451;0;0;0;0;	</span>	Лн—1	<br/>
+						<span class="red">	0;1;24;3451;0;0;0;0;0;	</span>	узел Лн—1	<br/>
+						<span class="red">	4;1;24;3451;3450;0;0;0;0;	</span>	Лн—1 фин	<br/>
+
+						</p>
+						<p class="smToggle__fourth-hide">
+						
+						<span class="red">	12;1;24;3959;0;0;1;0;0;;	</span><br/>
+						<span class="red">	4;1;24;3590;3593;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3594;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3673;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3673;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3594;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3673;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3594;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3958;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3594;3958;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3958;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3905;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3950;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3960;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3905;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3955;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3955;3960;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3951;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3951;3955;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3951;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3952;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3952;3955;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3952;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3953;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3953;3955;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3953;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3954;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3954;3960;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3954;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3960;3444;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3444;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3444;3454;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3454;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3959;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3444;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3955;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3441;0;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3450;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3958;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3959;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3455;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3455;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3455;3450;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3453;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3453;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3453;3450;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3452;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3452;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3452;3450;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3451;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3451;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3451;3450;0;0;0;0;	</span><br/>
+
+						</p>
+						
+						<form>
+							<input type="checkbox" id="smToggle__fourth">   показать полное описание схемы.<br/>
+						</form>
+
+					</div>
+					<div class="csv sech">
+						<span>Сечение 10 на контроле;</br>Сечение 28 без ограничений, не на контроле;</br>Сечение 129 без ограничений, не на контроле;</br>Сечения [11-14] без ограничений, не на контроле.</span>
+						<h4>sech.csv</h4>
+						<p>
+						<span class="red">10;1;404;305;1;3;</span>	Россия - Финляндия<br/>
+						<span class="red">28;1;9999;-9999;0;3;</span>	Выборг-Финляндия(КВПУ)<br/>
+						<span class="red">129;1;9999;-9999;0;0;</span>	Выделенное КВПУ (Фин)<br/>
+						<span class="red">11;1;9999;-9999;0;0;</span> КВПУ-1<br/>
+						<span class="red">12;1;9999;-9999;0;0;</span> КВПУ-2<br/>
+						<span class="red">13;1;9999;-9999;0;0;</span> КВПУ-3<br/>
+						<span class="red">14;1;9999;-9999;0;0;</span> КВПУ-4
+						</p>
+					</div>
+					<div class="csv gen">
+						<span>Для актуализации схемы рассматриваемого примера в рабочих файлах для фиктивных агрегатов нужно указать:</span>
+						<h4>gen.csv</h4>
+						<p>
+						<span class="red">110;1;-305;;0;1;0</span><br/>
+						<span class="red">111;1;0;;0;1;0</span>
+						</p>
+						<h4>agregm.csv</h4>
+						<p>
+						<span class="red">110;1;350;-1400;0;0;0;0;0;0</span><br/>
+						<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+						</p>
+
+					</div>
+				</div>
+			</section>
+			
+			<section class="description" id="fiveth">
+				<h2>Резервная схема №№ 2,3. Одно из КВПУ работает выделенно от сборных шин.</h2>
+				<img src="img/act/Fifth.svg" width="80%" style="display:block; position:relative; margin:0 auto 20px;">
+				<div class="comment">
+					<h3>Описание схемы:</h3>
+					<p>При работе Электропередачи по схеме № 2, 3, передача мощности в ЭС Финляндии осуществляется через общие шины КВПУ и выделенное от сборных шин 330 и 400 кВ ПС Выборгская КВПУ-4 на выделенную от сборных шин 400 кВ ПС Выборгская линию 400 кВ.</p>
+					<p>Например, для передачи 900МВт c общих шин КВПУ и 300МВт от выделенного КВПУ (суммарно 1200МВт):</p>
+				</div>
+				<div class="csvFiles">
+					<div class="csv sm">
+						<h4>sm.csv</h4>
+						<p class="smToggle__fiveth-show">
+						<span>Отличие от БМт</span><br/><br/>
+						<span class="red">	4;1;24;3590;3593;0;1;0;0;	</span>	Перемычка между блоками	<br/>
+						<span class="red">	4;1;24;3955;3960;0;0;0;0;	</span>	Перемычка между общими шинами нн и узлом нн КВПУ-4	<br/>
+						<span class="red">	4;1;24;3960;3444;0;1;0;0;	</span>	отключение Лн—1 от КВПУ—4	<br/>
+						<span class="red">	0;1;24;3444;0;0;1;0;0;	</span>	отключение узла 3444 при выделенном КВПУ—4	<br/>
+						<span class="red">	4;1;24;3444;3454;0;1;0;0;	</span>	отключение Лн—1 от выделенного КВПУ—4	<br/>
+						<span class="red">	0;1;24;3454;0;0;1;0;0;	</span>	отключение узла Кюми от выделенных КВПУ—4 и Лн—1	<br/>
+						<span class="red">	4;1;24;3441;3453;0;1;0;0;	</span>	Лн—3 при работе от КВПУ	<br/>
+						<span class="red">	0;1;24;3453;0;0;1;0;0;	</span>	узел Лн-3 при работе от КВПУ	<br/>
+						<span class="red">	4;1;24;3453;3450;0;1;0;0;	</span>	Лн—3фин при работе от КВПУ	<br/>
+						<span class="red">	4;1;24;3441;3451;0;0;0;0;	</span>	Лн—1	<br/>
+						<span class="red">	0;1;24;3451;0;0;0;0;0;	</span>	узел Лн—1	<br/>
+						<span class="red">	4;1;24;3451;3450;0;0;0;0;	</span>	Лн—1 фин	<br/>
+
+						</p>
+						<p class="smToggle__fiveth-hide">
+						<span class="red">	4;1;24;3590;3593;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3594;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3673;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3590;3673;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3593;3594;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3673;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3594;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3958;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3594;3958;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3958;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3905;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3950;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3960;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3905;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3955;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3955;3960;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3951;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3951;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3951;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3952;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3952;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3952;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3953;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3953;3955;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3905;3953;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3954;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3954;3960;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3950;3954;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3960;3444;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3444;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3444;3454;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3454;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3959;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3444;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3955;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3441;0;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3450;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3958;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3959;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3959;3455;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3455;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3455;3450;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3453;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3453;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3453;3450;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3452;0;1;0;0;	</span><br/>
+						<span class="red">	0;1;24;3452;0;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3452;3450;0;1;0;0;	</span><br/>
+						<span class="red">	4;1;24;3441;3451;0;0;0;0;	</span><br/>
+						<span class="red">	0;1;24;3451;0;0;0;0;0;	</span><br/>
+						<span class="red">	4;1;24;3451;3450;0;0;0;0;	</span><br/>
+
+						</p>
+						
+						<form>
+							<input type="checkbox" id="smToggle__fiveth">   показать полное описание схемы.<br/>
+						</form>
+
+					</div>
+					<div class="csv sech">
+						<span>Сечение 10 на контроле;</br>Сечение 28 на контроле;</br>Сечение 129 на контроле;</br>Сечения [11-14] на контроле, если КВПУ в работе.</span>
+						<h4>sech.csv</h4>
+						<p>
+						<span class="red">10;1;1200;1060;1;3;</span>	Россия - Финляндия<br/>
+						<span class="red">28;1;900.1;130;0;3;</span>	Выборг-Финляндия(КВПУ)<br/>
+						<span class="red">129;1;350;115;1;0;</span>	Выделенное КВПУ (Фин)<br/>
+						<span class="red">11;1;350;-10;1;0;</span> КВПУ-1<br/>
+						<span class="red">12;1;350;-10;1;0;</span> КВПУ-2<br/>
+						<span class="red">13;1;350;-10;1;0;</span> КВПУ-3<br/>
+						<span class="red">14;1;350;-10;1;0;</span> КВПУ-4
+						</p>
+					</div>
+					<div class="csv gen">
+						<span>Для актуализации схемы рассматриваемого примера в рабочих файлах для фиктивных агрегатов нужно указать:</span>
+						<h4>gen.csv</h4>
+						<p>
+						<span class="red">110;1;-1200;;0;1;0</span><br/>
+						<span class="red">111;1;-300;;0;1;0</span>
+						</p>
+						<h4>agregm.csv</h4>
+						<p>
+						<span class="red">110;1;350;-1400;0;0;0;0;0;0</span><br/>
+						<span class="red">111;1;350;-400;0;0;0;0;0;0</span>
+						</p>
+
+					</div>
+				</div>
+			</section>
+		</main>
+
+<a href="#" class="scrollup">Наверх</a>
+
+
+<script>
+	$(document).ready(function(){ 
+		$(window).scroll(function()
+			{if ($(this).scrollTop() > 100) {
+				$('.scrollup').fadeIn();
+			} else {
+				$('.scrollup').fadeOut();
+				}
+			}); 
+		$('.scrollup').click(function(){
+			$("html, body").animate({ scrollTop: 0 }, 600);
+		return false;
+		});
+	});
+</script>
+<script src="Js/lightbox-plus-jquery.min.js"></script>
+	</body>
+</html>
