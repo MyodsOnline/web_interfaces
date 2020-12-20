@@ -1,0 +1,358 @@
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700&subset=latin,cyrillic);
+
+html, body, header{
+	margin:0 auto;
+	padding:0;
+}
+
+header{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: url(../Img/fon.png);
+	padding: 10px 10px;
+}
+header img{
+	display: block;
+	margin-right: 15px;
+	padding-top: 5px;
+	width: 70px;
+}
+header h1{
+	font-size: 2.2em;
+	text-shadow: 1px 1px #fff, 2px 2px #666;
+	font-family: Georgia;
+	max-width: 700px;
+	display: block;
+	line-height: .9em;
+	margin: 10px;
+}
+.zoomSection { 
+	display: flex; 
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	position: relative;
+	margin:0 auto;
+	padding: 0;
+	width:100%;
+}
+.selector{
+	display: flex;
+	position: relative;
+	width: 100%;
+	justify-content: center;
+	align-items: stretch;
+	border-bottom: 1px solid gray;
+	font-family: Lora, Arial;
+	background: url(../Img/fon.png);
+	box-sizing: border-box;
+}
+.rightP{
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: stretch;
+	border-top: 1px solid gray;
+	font-family: Lora, Arial;
+	background: url(../Img/fon.png);
+	box-sizing: border-box;
+	flex-direction: row;
+	width: 100%;
+}
+input[type="checkbox"] {
+    display: none;
+}
+.col>p{
+	font-size: .91em;
+	font-weight: 300;
+	display: block;
+	margin: 0 0 0 10px;	
+	padding:0 5px;
+}
+.label_big{
+	font-size: 1.1em;
+	font-weight: 400;
+	display: block;
+	margin-left: 40px;
+	margin-bottom:6px;
+}
+.label_big::before,
+.label_big::after ,
+.small::before,
+.label_small::before{
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all .2s ease-in;
+}
+.small::before,
+.label_small::before{
+    margin-left: -13px;
+	 margin-top: 5px;
+	 width:5px;
+	 height:5px;
+	 border-radius:50%;
+	 border: 1px solid rgba(15,15,15,.6);
+}
+.small::before{
+	 background: green;
+}
+.label_small::before{
+	 background: none;
+}
+.label_big::before {
+    top: 8px;
+    width: 36px;
+    height: 20px;
+    border-radius: 11px;
+    margin-left: -45px;
+    box-shadow: inset 1px 1px 2px 0 rgba(15,15,15,.3);
+	background: rgba(233,236,228,1);
+	border: 1px solid rgba(15,15,15,.3);
+}
+.label_big::after {
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: -28px;  
+    border: 1px solid rgba(126,120,127,1);
+	background: white;
+}
+input[type="checkbox"].big:checked ~ .label_big::after {
+	transform: translateX(-17px);
+}
+input[type="checkbox"].big:checked ~ .label_big::before {
+    border-color: rgba(126,120,127,1);
+    background: green;
+}
+
+.switch-disabled{
+	opacity:.5;
+}
+.col{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 7px 10px;
+	text-align: left;
+	min-width: 180px;
+}
+.cols{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	text-align: left;
+	min-width: 180px;
+	box-sizing: border-box;
+	transition: all .15s ease-in;
+}
+.cols:hover{
+	background: rgba(25,25,25,.3);
+	border-radius: 7px;
+	box-shadow: 1px 1px 1px 0 rgba(25,25,25,.7);
+}
+.cols p{
+	margin: 2px;
+	padding: 5px;
+}
+ul{
+	display: block;
+	list-style: none;
+	position: relative;
+}
+
+.innerDiv{
+	display: block;
+	position: relative;
+	margin: 5px;
+	padding: 3px 5px;
+	min-width: 25%;
+}
+.innerDiv h3{
+	display: block;
+	text-align: center;
+}
+.hideDiv{
+	position: relative;
+	top: -10px;
+	margin: 5px;
+	width: 98%;
+	box-sizing: border-box;
+}
+.parent{
+	display: block; 
+	position: relative;
+	margin:0 auto;
+	padding: 0;
+	width:100%;
+	box-shadow: inset -3px -2px 4px 0 rgba(23, 23, 23, 0.3),
+	inset 3px 2px 4px 0 rgba(23, 23, 23, 0.3);
+	height: 100vh;
+}
+.parent svg{}
+.bgUlr{
+	background: url(../Img/geoMap.jpg) no-repeat;
+	background-size: 100% 100%;	
+	background-position: top 0px;
+}
+.panzoom { 
+	display: block; 
+	width:70%;
+	height:100%; 
+	text-align: center; 
+	margin: 0 auto;
+}
+.buttons { 
+	margin: 0; 
+	display: block; 
+	position: absolute; 
+	top:120px; 
+	left:20px; 
+	cursor: pointer;
+}
+.button{ 
+	display: inline-block; 
+	vertical-align: center;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	margin: 0 4px;
+	border-radius: 50%;
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, .12), 0 5px 10px -3px rgba(0, 0, 0, .3);
+	transition: all .13s ease-in;
+	font-size: 2.1em;
+	border: 1px solid rgba(150,25,25,.4);
+}
+.button:hover{
+	box-shadow: 0 0 1px 1px rgba(150,25,25,.4);
+}
+.pointer{
+	cursor: pointer;
+}
+.flex-el{
+	display: flex;
+}
+.flex-el p{
+	margin:0 15px;
+	padding: 0;
+	font-size: 1.2em;
+}
+h3, ul{
+	margin: 7px;
+	padding: 0;
+}
+
+nav{
+position: fixed;
+font-family: Arial, Helvetica, sans-serif;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.8);
+z-index: 99999;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+display: none;
+color: white;
+text-align: center;
+}
+nav>div{
+	display: block;
+	position: relative;
+	margin: 2%;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 2%;
+	background: rgba(0,0,0,0.8);
+}
+
+.lineAnimate{
+	animation: dash 1s linear 7;
+}
+@keyframes dash {
+	from {stroke-width: 2;}
+	50% {stroke-width: 15;};
+	to {stroke-width: 2;}
+}
+@-webkit-keyframes dash {
+	from {stroke-width: 2;}
+	50% {stroke-width: 15;};
+	to {stroke-width: 2;}
+}
+
+/* Sxema hover */
+#line750kv>polyline:hover{
+	stroke:blue;
+	stroke-width:16;
+	cursor:pointer;
+}
+#b750kv>path:hover{
+	fill:blue;
+	r:27;
+	cursor:pointer;
+}
+#line330kv>polyline:hover{
+	stroke:green;
+	stroke-width:16;
+	cursor:pointer;
+}
+#b330kv>circle:hover{
+	stroke:green;
+	cursor:pointer;
+	stroke-width:16;
+}
+#line220kv>polyline:hover{
+	stroke:orange;
+	stroke-width:8;
+	cursor:pointer;
+}
+#tes>path:hover,
+#ges>path:hover,
+#pp>path:hover {
+	cursor:pointer;
+	stroke-width:5;
+}
+#vost-vs:hover ` #vost-vs>circle{
+	stroke-width:16;	
+}
+
+/*check + style*/
+.choseLine{
+	background: rgba(25,25,25,.3);
+	border-radius: 7px;
+	box-shadow: 1px 1px 1px 0 rgba(25,25,25,.7);
+
+}
+.choseLineSxem{
+	stroke-width: 10;
+}
+.hideDiv{
+	display: none;
+	font-size: .9em;
+}
+.hideDiv a{
+	color: blue;
+}
+.choseSech{
+	fill: red;
+	stroke-width:5;
+}
+
+@media screen and (max-width: 900px;) {
+	.selector, .rightP{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	header{
+		h1{
+			font-size: 1.8em;
+		}
+	}
+}
