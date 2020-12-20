@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script src="js/jquery-2.1.4.js"></script>
+	<script src="https://kit.fontawesome.com/f0d9666a6c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrapper">
+<div class="inner">
+	<header>
+		<h1><img src="img/Alien.svg">Списки персонала</h1>
+		<input type="checkbox" id="switcher">
+		<label for="switcher"><i class="fas fa-bars"></i></label>
+		<nav>
+			<ul class="menu">
+				<li class="head_li"><h1><img src="img/UFO1.svg">Ссылки на сервисы</h1></li>
+				<li class="double">
+					<a class="double__link cont" href="https://deb-oducz.oducz.so:8080/Default.aspx" target="_blank">Диспетчерская электронная библиотека (ДЭБ)</a>
+					<img class='favorit link_to_descript' src="img/Stars.svg">
+<!--					<span class="double__link link_to_descript">Избранное</span>-->
+					<div class="descript display_non_all">
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=b03d0a7e-8e8e-4b14-bde3-78802ec348e9" target="_blank">По лквидации аварий</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=a8cdde75-161d-4ca8-b890-a2b3006f773e" target="_blank">Инструкция по защитам шин, АТ, ШР/a>
+						<a class="tips foregin" href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=in&catalogEd=5ebd0d09-d860-4085-ace2-c6a4364743b2&codeDC=5e15adc7-6b7e-4d28-8832-7a5f65378f5d" target="_blank">Ликвидация аварий ЦДУ</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=9f9d4cfd-96ac-4800-9124-d4bb3dd903f3" target="_blank">Порядок СДК</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=5d628a31-ca99-4a64-99d4-ad078289bfe8" target="_blank">По переключениям ОДУ</a>
+						<a class="tips foregin" href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=in&catalogEd=414a9f18-8ab1-4659-97ef-ff68d01de2f6&codeDC=3258f272-e064-4f11-b9ae-0544a099d7a6" target="_blank">ИЛА ЛенРДУ</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=815cd448-a2e8-4a6e-9997-62c771271de6" target="_blank">Порядок ведения переговоров</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/default.aspx?sid=243fc0c0-87d2-4b6b-b87e-3d5ba3a991b1" target="_blank">ПА: ЦСПА, АРС и САОН, УПАСК</a>
+						<a class="tips foregin" href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=39b5cfaf-deec-4536-b7ac-e7aae88335d7" target="_blank">Децентрализация ОДУ СЗ</a>
+						<a class="tips foregin" href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=ff936ee0-6f21-493d-83bd-c6b3a4aa9a8c" target="_blank">Перевод в ЦТПП</a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/default.aspx?sid=243fc0c0-87d2-4b6b-b87e-3d5ba3a991b1" target="_blank">Справка по ТЭЦ ОДУ СЗ</a>
+						<a class="tips" href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=90e17f69-d2b3-4977-bed3-b78a2dc5afa9" target="_blank">Положение по заявкам</a>
+					</div>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://ia-rsp-app.cdu.so/personal/OwnRoom.aspx" target="_blank">ПАК "Работа с персоналом" (РСП)</a>
+					<img class='favorit link_to_descript' src="img/Stars.svg">
+					<div class="descript display_non_all">
+						<a class='tips'href="https://ia-rsp-app.cdu.so/personal/schedule/WorkTimeGraphApproved.aspx?rid=7250046D184E41B38DA93D4DB237A9AB&utid=9D32633C72CC4E9B920661B696BA6328" target="_blank">Утвержденный график</a>
+						<a class='tips'href="https://ia-rsp-app.cdu.so/personal/prepare/IndividPrepareProgram.aspx?rid=7250046D184E41B38DA93D4DB237A9AB&utid=9D32633C72CC4E9B920661B696BA6328" target="_blank">Спецподготовка</a>
+					</div>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://deb-oducz.oducz.so:8080/Default.aspx" target="_blank">Положение по управлению режимами (ПУР)</a>
+					<img class='favorit link_to_descript' src="img/Stars.svg">
+					<div class="descript display_non_all">
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/getfile.aspx?id=21315078-f097-435f-87b1-9c812f67fe05" target="_blank">Приложение 5<span class="tips_descript">Порядок вкл/откл ЛЭП<span></a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/edpagenew.aspx?action=show&catalogEd=eba6a761-fb36-4132-ab36-767880c7dac9" target="_blank">Приложение 9<span class="tips_descript">Эффективность<span></a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/getfile.aspx?id=5d9f8bea-b6e7-4050-bc80-686a5e231e40" target="_blank">Приложение 20<span class="tips_descript">Алгоритмы/схемы ПА<span></a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/getfile.aspx?id=44eab3c6-057a-4ce2-9987-ee96e0b01fce" target="_blank">Приложение 24<span class="tips_descript">Перестройка ПА<span></a>
+						<a class='tips'href="https://deb-oducz.oducz.so:8080/getfile.aspx?id=e97d4664-1093-4999-a6fa-33e935a05fc3" target="_blank">Приложение 29<span class="tips_descript">Места размещения АОПО<span></a>
+					</div>
+				</li>
+				<li>
+					<a class="double__link cont" href="https://srv-expert-sz.oducz.so/" target="_blank">ПК "Эксперт - Диспетчер"</a>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://srv-skam-sz.oducz.so/soap/" target="_blank">Мониторинг асинхронного режима (СКАМ)</a>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://sz-ssrdp-iis11.oducz.so/PhantomClient/" target="_blank">Записи диспетчерских переговоров (ССРДП)</a>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://obm.cdu.so/" target="_blank">Блочная ведомость</a>
+				</li>
+				<li class="double">
+					<a class="double__link cont" href="https://sd.cdu.so/sd/operator/" target="_blank">Подать заявку в ServiceDesk</a>
+				</li>
+				<li class="head_li"><h1><img src="img/SatelliteDish.svg">Папки на сетевых дисках</h1>
+				</li>
+				<li class="folders">
+					<div class="folders__inner">
+						<a href="K:\disp_sl\СПРАВКА по ДЕЙСТВИЯМ" target="_blank">K:\disp_sl\справка по действиям</a>
+					</div>
+					<div class="folders__inner">
+						<a href="K:\disp_sl\ЛИЧНЫЕ ПАПКИ ОДС" target="_blank">K:\disp_sl\личные папки</a>
+					</div>
+					<div class="folders__inner">
+						<a href="K:\ODS_BOSS" target="_blank">K:\ods_boss</a>
+					</div>
+					<div class="folders__inner">
+						<a href="K:\ODS_BOSS\ОЧЕРЕДНЫЕ Прогр Перекл" target="_blank">K:\ods_boss\очередные программы переключений</a>
+					</div>
+					<div class="folders__inner">
+						<a href="K:\ODS_BOSS\РЕЖИМНЫЕ УКАЗАНИЯ" target="_blank">K:\ods_boss\режимные указания</a>
+					</div>
+					<div class="folders__inner">
+						<a href="S:\ARM\PRES_SUTKI\OUT_FORM\List_PPBR" target="_blank">S:\arm\pres_sutki\out_form\List_PPBR</a>
+					</div>
+					<div class="folders__inner">
+						<a href="T:\LSA\SwitchJournal" target="_blank">T:\lsa\SwitchJournal</a>
+					</div>
+					<div class="folders__inner">
+						<a href="K:\disp_sl\Рапорт руководству" target="_blank">K:\disp_sl\рапорт руководству</a>
+					</div>
+
+				</li>
+				<li class="head_li"><h1><img src="img/Sputnik.svg">Авторские подборки</h1></li>
+				<li class="double">
+					<a class="double__link cont red" href="#" target="_blank">— Ликвидация аварии</a>
+					<img class='favorit link_to_descript' src="img/Stars.svg">
+					<div class="descript display_non_all">
+						<a class="tips inner_img" href="SVG/АТ.svg" target="_blank">Отключение АТ</a>
+						<a class="tips inner_img" href="SVG/SH.svg" target="_blank">Отключение системы шин</a>
+						<a class='tips'href="">Приложение 5<span class="tips_descript">Порядок вкл/откл ЛЭП<span></a>
+						<a class='tips'href="">Приложение 9<span class="tips_descript">Эффективность<span></a>
+						<a class='tips'href="">Приложение 20<span class="tips_descript">Алгоритмы/схемы ПА<span></a>
+						<a class='tips'href="">Приложение 24<span class="tips_descript">Перестройка ПА<span></a>
+						<a class='tips'href="">Приложение 29<span class="tips_descript">Места размещения АОПО<span></a>
+						<a class="tips foregin" href="#" target="_blank">ПУР Испол.апарат</a>
+						<a class="tips foregin" href="#" target="_blank">ПУР ЛенинградскогоРДУ</a>
+						
+					</div>
+				</li>
+<!--
+				<li><a class="menu__link" href="#" target="_blank">Hjusdlk1</a></li>
+				<li><a class="menu__link" href="#" target="_blank">Hjusdlk2</a></li>
+				<li><a class="menu__link" href="#" target="_blank">Hjusdlk3</a></li>
+				<li><a class="menu__link" href="#" target="_blank">Hjusdlk4</a></li>
+-->
+			</ul>
+			<label class="close" for="switcher"><i class="fas fa-times"></i></label>
+		</nav>
+	</header>
+
+	<article>
+		<h2 class="link_deb"><img src="img/Helmet.svg">Диспетчерские центры</h2>
+		<div>
+			<p class="name">МЭС Северо-Запада</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Бычкова Юлия Игорьевна</li>
+				<li><input type="checkbox">Дорощук Станислав Александрович</li>
+				<li><input type="checkbox">Капитанов Максим Геннадьевич</li>
+				<li><input type="checkbox">Кокарев Андрей Анатольевич</li>
+				<li><input type="checkbox">Малыгин Сергей Петрович</li>
+				<li><input type="checkbox">Стенин Алексей Валерьевич</li>
+				<li><input type="checkbox">Корякин Дмитрий Андреевич</li>
+				<li><input type="checkbox">Ваховский Роман Викторович</li>
+				<li><input type="checkbox">Валишвили Владислав Славикович</li>
+			</ul>
+		</div>	
+		<div>
+			<p class="name">ЦУС Ленинградского ПМЭС</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Затонский Олег Николаевич</li>
+				<li><input type="checkbox">Корякин Дмитрий Андреевич</li>
+				<li><input type="checkbox">Тиханович Дмитрий Константинович</li>
+				<li><input type="checkbox">Марченко Геннадий Анатольевич</li>
+				<li><input type="checkbox">Ваховский Роман Викторович</li>
+				<li><input type="checkbox">Ковалев Павел Дмитриевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">РУП ОДУ Беларуси</p>
+			<ul class="hidden">
+				<li><input type="checkbox">	Батуро Сергей Петрович</li>
+				<li><input type="checkbox">	Вашкевич Игорь Владимирович	</li>
+				<li><input type="checkbox">	Гинько Евгений Сергеевич</li>
+				<li><input type="checkbox">	Карабан Олег Григорьевич</li>
+				<li><input type="checkbox">	Кустов Сергей  Иванович</li>
+				<li><input type="checkbox">	Магер Никита Юрьевич</li>
+				<li><input type="checkbox">	Павлович Евгений Михайлович	</li>
+				<li><input type="checkbox">	Пыжик Константин Аркадьевич</li>
+				<li><input type="checkbox">	Радкевич Евгений Валентинович</li>
+				<li><input type="checkbox">	Хомчановский Леонид Федорович</li>
+				<li><input type="checkbox">	Чайков Илья Александрович</li>
+				<li><input type="checkbox">	Чернышевич Алексей Владимирович	</li>
+			</ul>
+		</div>			
+		<div>
+			<p class="name">ОДУ Центра</p>
+			<ul class="hidden">
+				<li><input type="checkbox">	Акиншин Евгений Николаевич	</li>
+				<li><input type="checkbox">	Беликов Вячеслав Васильевич	</li>
+				<li><input type="checkbox">	Болкунов Григорий Александрович	</li>
+				<li><input type="checkbox">	Вереникин Сергей Анатольевич	</li>
+				<li><input type="checkbox">	Капылов Михаил Александрович	</li>
+				<li><input type="checkbox">	Кирсанов Вениамин Владимирович	</li>
+				<li><input type="checkbox">	Косяков Алексей Андреевич	</li>
+				<li><input type="checkbox">	Кравченко Александр Владимирович	</li>
+				<li><input type="checkbox">	Кузнецов Владимир Дмитриевич	</li>
+				<li><input type="checkbox">	Литвинов Анатолий Анатольевич	</li>
+				<li><input type="checkbox">	Макаров Алексей Юрьевич	</li>
+				<li><input type="checkbox">	Мякишев Александр Андреев.	</li>
+				<li><input type="checkbox">	Натертышев Алексей Владимирович	</li>
+				<li><input type="checkbox">	Охрименко Григорий Николаевич	</li>
+				<li><input type="checkbox">	Панин Владислав Юрьевич	</li>
+				<li><input type="checkbox">	Рыбин Александр Федорович	</li>
+				<li><input type="checkbox">	Спириденков Сергей Валерьевич	</li>
+				<li><input type="checkbox">	Сургаев Олег Петрович	</li>
+				<li><input type="checkbox">	Успенский Сергей Витальевич	</li>
+				<li><input type="checkbox">	Ширданин Сергей Александрович	</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">Тверское РДУ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">	Беляков Алексей Владимирович	</li>
+				<li><input type="checkbox">	Березкин Алексей Евгеньевич	</li>
+				<li><input type="checkbox">	Беркетов Александр Сергеевич	</li>
+				<li><input type="checkbox">	Воронин Александр Михайлович	</li>
+				<li><input type="checkbox">	Дюндин Андрей Сергеевич		</li>
+				<li><input type="checkbox">	Жиляев Алексей Венедиктович	</li>
+				<li><input type="checkbox">	Иванов Павел Геннадьевич	</li>
+				<li><input type="checkbox">	Ильин Александр Николаевич	</li>
+				<li><input type="checkbox">	Левченко Юрий Витальевич	</li>
+				<li><input type="checkbox">	Литуев Виталий Олегович		</li>
+				<li><input type="checkbox">	Садуянц Михаил Дмитриевич	</li>
+				<li><input type="checkbox">	Сальхов Иван Владимирович	</li>
+				<li><input type="checkbox">	Чернышов Дмитрий Вадимович	</li>
+				<li><input type="checkbox">	Фирстов Павел Евгеньевич	</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">Смоленское РДУ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">	Антипенков Андрей Викторович	</li>
+				<li><input type="checkbox">	Абрамович Константин Валерьевич	</li>
+				<li><input type="checkbox">	Белов Денис Иванович		</li>
+				<li><input type="checkbox">	Булыгин Антон Александрович	</li>
+				<li><input type="checkbox">	Готовцев Сергей Леонидович	</li>
+				<li><input type="checkbox">	Егоренков Евгений Александрович	</li>
+				<li><input type="checkbox">	Жакун Степан Степанович	</li>
+				<li><input type="checkbox">	Захаренков Алексей Игоревич	</li>
+				<li><input type="checkbox">	Иванов Денис Александрович	</li>
+				<li><input type="checkbox">	Корешков Александр Валерьевич	</li>
+				<li><input type="checkbox">	Назаров Алексей Александрович	</li>
+				<li><input type="checkbox">	Пашкевич Александр Леонидович	</li>
+				<li><input type="checkbox">	Прачкин Артём Геннадьевич	</li>
+				<li><input type="checkbox">	Родченков Виктор Юрьевич	</li>
+				<li><input type="checkbox">	Романенко Андрей Михайлович	</li>
+				<li><input type="checkbox">	Рязанов Сергей Николаевич	</li>
+				<li><input type="checkbox">	Сергеев Олег Леонидович	</li>
+				<li><input type="checkbox">	Типикин Андрей Михайлович	</li>
+				<li><input type="checkbox">	Фещенко Анатолий Владимирович	</li>
+			</ul>
+		</div>
+		
+		<h2 class="link_deb"><img src="img/MoonLander.svg">Электростанции</h2>
+		<div>
+			<p class="name">Киришская ГРЭС</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Изовит Михаил Евгеньевич</li>
+				<li><input type="checkbox">Бобылев Сергей Петрович</li>
+				<li><input type="checkbox">Виноградов Алексей  Викторович</li>
+				<li><input type="checkbox">Дунаев Валерий Леонидович</li>
+				<li><input type="checkbox">Лобановский Станислав Викторович</li>
+				<li><input type="checkbox">Шабатурин Антон Владимирович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">Северо-Западная ТЭЦ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Коковкин Андрей Владимирович</li>
+				<li><input type="checkbox">Кружков Андрей Владиславович</li>
+				<li><input type="checkbox">Попов Алексей Валерьевич</li>
+				<li><input type="checkbox">Серёдкин Вячеслав Николаевич</li>
+				<li><input type="checkbox">Егоров Валерий Владимирович</li>
+				<li><input type="checkbox">Былинский Николай Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">1оч Ленинградской АЭС</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Захаржевский Александр  Юрьевич</li>
+				<li><input type="checkbox">Калинин Андрей Юрьевич</li>
+				<li><input type="checkbox">Кириков Алексей Дмитриевич</li>
+				<li><input type="checkbox">Кузнецов Владимир Ильич</li>
+				<li><input type="checkbox">Кузьмич Константин Юрьевич</li>
+				<li><input type="checkbox">Рубцов Геннадий Анатольевич</li>
+				<li><input type="checkbox">Яганов Александр Юрьевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">— 1оч ЛАЭС ЭлЦЕХ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Михайлов Алексей Юрьевич</li>
+				<li><input type="checkbox">Малаев Виктор Александрович</li>
+				<li><input type="checkbox">Филоненко Константин Гергиевич</li>
+				<li><input type="checkbox">Ганичин Владислав Владимирович</li>
+				<li><input type="checkbox">Власов Виктор Владимирович</li>
+				<li><input type="checkbox">Буланов Дмитрий Владимирович</li>
+				<li><input type="checkbox">Астаповский Александр Николаевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">2оч Ленинградской АЭС</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Арасланов Владимир Зинурович</li>
+				<li><input type="checkbox">Давыдов Николай Владимирович</li>
+				<li><input type="checkbox">Кочнев Валерий Борисович</li>
+				<li><input type="checkbox">Куковякин Анатолий Иванович</li>
+				<li><input type="checkbox">Портной Михаил Федорович</li>
+				<li><input type="checkbox">Сорокин Александр Владимирович</li>
+				<li><input type="checkbox">Чичиндаев Сергей Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">— 2оч ЛАЭС ЭлЦЕХ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Еременко Александр Владимирович</li>
+				<li><input type="checkbox">Галкин Владимир Иванович</li>
+				<li><input type="checkbox">Новиков Владимир Дмитриевич</li>
+				<li><input type="checkbox">Боровков Алексей Вячеславович</li>
+				<li><input type="checkbox">Зудин Олег Юрьевич</li>
+				<li><input type="checkbox">Мишечкин Вячеслав Викоторович</li>
+				<li><input type="checkbox">Беляков Сергей Валерьевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">5й блок Ленинградской АЭС</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Боев Алексей Иванович</li>
+				<li><input type="checkbox">Ганчев Матвей Валерьевич</li>
+				<li><input type="checkbox">Калинников Владимир Александрович</li>
+				<li><input type="checkbox">Минаев Андрей Николаевич</li>
+				<li><input type="checkbox">Паклянов Юрий Николаевич</li>
+				<li><input type="checkbox">Соловьев Олег Владимирович</li>
+				<li><input type="checkbox">Хорошенин Дмитрий Евгеньевич</li>
+				<li><input type="checkbox">Чигарев Сергей Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">— 5й блок ЛАЭС ЭлЦЕХ</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Богатырев Александр Викторович</li>
+				<li><input type="checkbox">Камзеев Виктор Анатольевич</li>
+				<li><input type="checkbox">Маргарян Сурен Мартикович</li>
+				<li><input type="checkbox">Сениченков Виталий Викторович</li>
+				<li><input type="checkbox">Смольников Алексей Александрович</li>
+				<li><input type="checkbox">Сорокин Александр Владимирович</li>
+				<li><input type="checkbox">Фомиченко Виталий Станиславович</li>
+			</ul>
+		</div>
+		<h2 class="link_deb"><img src="img/Capsule.svg">ПС Ленинградского ПМЭС</h2>
+		<div>
+			<p class="name">ПС 750 кВ Ленинградская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Душилихинский Артём Владимирович</li>
+				<li><input type="checkbox">Саматов Виталий Владимирович</li>
+				<li><input type="checkbox">Поляков Алексей Геннадьевич</li>
+				<li><input type="checkbox">Акулов Михаил Владимирович</li>
+				<li><input type="checkbox">Клещев Дмитрий Николаевич</li>
+				<li><input type="checkbox">Кулаженков Владимир Александрович</li>
+				<li><input type="checkbox">Толмачев Дмитрий Сергеевич</li>
+				<li><input type="checkbox">Кулаженков Артём Владимрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Василеостровская</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Белкин Алексей Валерьевич</li>
+				<li><input type="checkbox">Голубев Александр Александрович</li>
+				<li><input type="checkbox">Кочкин Андрей Валерьевич</li>
+				<li><input type="checkbox">Сычев Артём Сергеевич</li>
+				<li><input type="checkbox">Черницкий Артём Викторович</li>
+				<li class="gps boss"><input type="checkbox">Онацкий Андрей Викторович</li>
+				<li class="gps"><input type="checkbox">Татмышевский Владислав Сергеевич</li>
+				<li class="gps"><input type="checkbox">Васильев Алексей Валерьевич</li>
+				<li class="gps"><input type="checkbox">Морозов Сергей Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Волхов-Северная</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Ведяшев Илья Дмитриевич</li>
+				<li><input type="checkbox">Давыдов Семен Эдуардович</li>
+				<li><input type="checkbox">Даутов Эдуард Рамилевич</li>
+				<li><input type="checkbox">Иванов Михаил Николаевич</li>
+				<li><input type="checkbox">Кателеев Андрей Николаевич</li>
+				<li><input type="checkbox">Макушев Алексей Владимирович</li>
+				<li class="gps boss"><input type="checkbox">Барабанщиков Андрей Олегович</li>
+				<li class="gps"><input type="checkbox">Хищенко Сергей Николаевич</li>
+				<li class="gps"><input type="checkbox">Маслов Сергей Алексеевич</li>
+				<li class="gps"><input type="checkbox">Груздев Дмитрий Викторович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Восточная</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Нужин Константин Викторович</li>
+				<li><input type="checkbox">Романченко Федор Викторович</li>
+				<li><input type="checkbox">Сова Эльвира Григорьевна</li>
+				<li><input type="checkbox">Мухаметгалиев Булат Назирович</li>
+				<li><input type="checkbox">Капралов Константин Евгеньевич</li>
+				<li><input type="checkbox">Коломиец Сергей Андреевич</li>
+				<li><input type="checkbox">Краев Андрей Андреевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Гатчинская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Агзамов Руслан Закиянович</li>
+				<li><input type="checkbox">Болотов Максим Сергеевич</li>
+				<li><input type="checkbox">Дубовицкий Олег Валерьевич</li>
+				<li><input type="checkbox">Филиппов Андрей Иванович</li>
+				<li><input type="checkbox">Кошкаровский Евгений Сергеевич</li>
+				<li><input type="checkbox">Хаялиев Сейран Серверович</li>
+				<li class='gps boss'><input type="checkbox">Шитов Александр Николаевич</li>
+				<li class='gps'><input type="checkbox">Сувиров Николай Сергеевич</li>
+				<li class='gps'><input type="checkbox">Шепелёв Руслан Сергеевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Завод Ильич</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Треплин Станислав Борисович</li>
+				<li><input type="checkbox">Байчурин Дмитрий Николаевич</li>
+				<li><input type="checkbox">Быстров Сергей Игоревич</li>
+				<li><input type="checkbox">Курмаков Александр Сергеевич</li>
+				<li><input type="checkbox">Раков Евгений Константинович</li>					
+				<li><input type="checkbox">Кущенков Дмитрий Олегович</li>
+				<li><input type="checkbox">Степин Денис Васильевич</li>
+				<li class="gps boss"><input type="checkbox">Онацкий Андрей Викторович</li>
+				<li class="gps"><input type="checkbox">Татмышевский Владислав Сергеевич</li>
+				<li class="gps"><input type="checkbox">Васильев Алексей Валерьевич</li>
+				<li class="gps"><input type="checkbox">Морозов Сергей Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Западная</p>
+			<ul class="hidden">
+				<li class='boss'><input type="checkbox">Миргородский Сергей Алексеевич</li>
+				<li><input type="checkbox">Апушкин Алексей Сергеевич</li>
+				<li><input type="checkbox">Гейко Анатолий Александрович</li>
+				<li><input type="checkbox">Смирнов Александр Борисович</li>
+				<li><input type="checkbox">Шаньгин Александр Юрьевич</li>
+				<li class='gps boss'><input type="checkbox">Шитов Александр Николаевич</li>
+				<li class='gps'><input type="checkbox">Сувиров Николай Сергеевич</li>
+				<li class='gps'><input type="checkbox">Шепелёв Руслан Сергеевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Колпино</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Шатохин Денис Олегович</li>
+				<li><input type="checkbox">Щеглов Дмитрий Сергеевич</li>
+				<li><input type="checkbox">Кондратьева Ольга Юрьевна</li>
+				<li><input type="checkbox">Лаптева Евгения Валерьевна</li>
+				<li><input type="checkbox">Левин Виктор Евгеньевич</li>
+				<li><input type="checkbox">Шалыгин Валентин Николаевич</li>
+				<li class="gps boss"><input type="checkbox">Старшинова Ольга Николаевна</li>
+				<li class="gps"><input type="checkbox">Барабанщиков Олег Валентинович</li>
+				<li class="gps"><input type="checkbox">Мальченко Денис Анатольевич</li>
+				<li class="gps"><input type="checkbox">Милорадов Игорь Евгеньевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Парнас</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Сорокин Михаил Васильевич</li>
+				<li><input type="checkbox">Ган Константин Борисович</li>
+				<li><input type="checkbox">Герасимов Виктор Геннадьевич</li>
+				<li><input type="checkbox">Макарчук Максим Геннадьевич</li>
+				<li class="gps boss"><input type="checkbox">Барабанщиков Андрей Олегович</li>
+				<li class="gps"><input type="checkbox">Хищенко Сергей Николаевич</li>
+				<li class="gps"><input type="checkbox">Маслов Сергей Алексеевич</li>
+				<li class="gps"><input type="checkbox">Груздев Дмитрий Викторович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Пулковская</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Андреев Антон Владимирович</li>
+				<li><input type="checkbox">Дзюба Александр Анатольевич</li>
+				<li><input type="checkbox">Ефимов Михаил Николаевич</li>
+				<li><input type="checkbox">Завьялов Станислав Эдуардович</li>
+				<li><input type="checkbox">Куликов Дмитрий Александрович</li>
+				<li class='gps boss'><input type="checkbox">Шитов Александр Николаевич</li>
+				<li class='gps'><input type="checkbox">Сувиров Николай Сергеевич</li>
+				<li class='gps'><input type="checkbox">Шепелёв Руслан Сергеевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Ржевская</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Боярченков Михаил Валерьевич</li>
+				<li><input type="checkbox">Иванов Анатолий Нилович</li>
+				<li><input type="checkbox">Славин Денис Анатольевич</li>
+				<li><input type="checkbox">Советов Сергей Александрович</li>
+				<li><input type="checkbox">Шель Андрей Петрович</li>
+				<li class="gps boss"><input type="checkbox">Барабанщиков Андрей Олегович</li>
+				<li class="gps"><input type="checkbox">Хищенко Сергей Николаевич</li>
+				<li class="gps"><input type="checkbox">Маслов Сергей Алексеевич</li>
+				<li class="gps"><input type="checkbox">Груздев Дмитрий Викторович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Северная</p>
+			<ul class="hidden">
+				<li class="gps"><input type="checkbox">Чернышев Алексей Викторович</li>
+				<li><input type="checkbox">Телин Алексей Николаевич</li>
+				<li><input type="checkbox">Михальченко Александр Николаевич</li>
+				<li><input type="checkbox">Кирьяков Игорь Викторович</li>
+				<li><input type="checkbox">Кадушин Дмитрий Васильевич</li>
+				<li><input type="checkbox">Юдин Артём Андреевич</li>
+				<li class="gps boss"><input type="checkbox">Онацкий Андрей Викторович</li>
+				<li class="gps"><input type="checkbox">Татмышевский Владислав Сергеевич</li>
+				<li class="gps"><input type="checkbox">Васильев Алексей Валерьевич</li>
+				<li class="gps"><input type="checkbox">Морозов Сергей Александрович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Центральная</p>
+			<ul class="hidden">
+				<li><input type="checkbox">Герасимов Андрей Игоревич</li>
+				<li><input type="checkbox">Лобановский Владимир Викторович</li>
+				<li><input type="checkbox">Мельяченко Алексей Олегович</li>
+				<li><input type="checkbox">Марченко Геннадий Анатольевич</li>
+				<li><input type="checkbox">Туркин Олег Юрьевич</li>
+				<li class="gps boss"><input type="checkbox">Комова Анастасия Олкговна</li>
+				<li class='gps'><input type="checkbox">Карпов Михаил Владимирович</li>
+				<li class='gps'><input type="checkbox">Малов Юрий Вячеславович</li>
+				<li class='gps'><input type="checkbox">Егоров Евгений Николаевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Южная</p>
+			<ul class="hidden">
+				<li class='boss'><input type="checkbox">Бердников Максим Геннадьевич</li>
+				<li><input type="checkbox">Каберский Александр Владимирович</li>
+				<li><input type="checkbox">Софронов Александр Викторович</li>
+				<li><input type="checkbox">Орлов Павел Юрьевич</li>
+				<li><input type="checkbox">Воробьев Александр Викторович</li>
+				<li><input type="checkbox">Гулуев Роман Салманович</li>
+				<li class="gps boss"><input type="checkbox">Комова Анастасия Олкговна</li>
+				<li class='gps'><input type="checkbox">Карпов Михаил Владимирович</li>
+				<li class='gps'><input type="checkbox">Малов Юрий Вячеславович</li>
+				<li class='gps'><input type="checkbox">Егоров Евгений Николаевич</li>
+			</ul>
+		</div>			
+		<h2 class="link_deb"><img src="img/Capsule.svg">ПС Новгородского ПМЭС</h2>
+		<div>
+			<p class="name">ПС 330 кВ Кингисеппская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Хренков Владимир Алексеевич</li>
+				<li><input type="checkbox">Агулов Константин Иванович</li>
+				<li><input type="checkbox">Вьюнов Сергей Никифорович</li>
+				<li><input type="checkbox">Меркулов Александр Николаевич</li>
+				<li><input type="checkbox">Павлов Алексей Викторович</li>
+				<li><input type="checkbox">Гиганов Денис Валерьевич</li>
+				<li class="unaproval"><input type="checkbox">Звонарев Алексей Иванович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Лужская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Никонов Игорь Борисович</li>
+				<li><input type="checkbox">Графов Олег Александрович</li>
+				<li><input type="checkbox">Нилогов Дмитрий Викторович</li>
+				<li><input type="checkbox">Савин Владимир Ростиславович</li>
+				<li><input type="checkbox">Томилов Александр Иванович</li>
+				<li><input type="checkbox">Трофимов Александр Николаевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Окуловская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Лаврентьев Александр Алексеевич</li>
+				<li><input type="checkbox">Михайлов Сергей Евгеньевич</li>
+				<li><input type="checkbox">Васильев Геннадий Павлович</li>
+				<li><input type="checkbox">Звонарёв Максим Владимирович</li>
+				<li><input type="checkbox">Иванов Павел Сергеевич</li>
+				<li><input type="checkbox">Лаврентьев Алексей Александрович</li>
+				<li><input type="checkbox">Шорохов Евгений Романович</li>
+			</ul>
+		</div>
+	
+		<h2 class="link_deb"><img src="img/Capsule.svg">ПС Карельского ПМЭС</h2>
+		<div>
+			<p class="name">ПС 400 кВ Выборгская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Гришаев Александр Генадьевич</li>
+				<li><input type="checkbox">Бородулин Алексей  Сергеевич</li>
+				<li><input type="checkbox">Виноградов Алексей Валерьевич</li>
+				<li><input type="checkbox">Квасников Павел Анатольевич</li>
+				<li><input type="checkbox">Рябов Павел Николаевич</li>
+				<li><input type="checkbox">Чернышев Александр Евгеньевич</li>
+				<li><input type="checkbox">Чумак Александр Владимирович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Зеленогорск</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Страженский Дмитрий Станиславович</li>
+				<li><input type="checkbox">Малахута Иван Васильевич</li>
+				<li><input type="checkbox">Васянин Илья Петрович</li>
+				<li><input type="checkbox">Градов Андрей Васильевич</li>
+				<li><input type="checkbox">Круглов Илья Николаевич</li>
+				<li><input type="checkbox">Родионов Алексей Викторович</li>
+				<li><input type="checkbox">Грабар Евгений Алексеевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Каменногорская</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Сорокин Олег Викторович</li>
+				<li><input type="checkbox">Сацюк Ирина Александровна</li>
+				<li><input type="checkbox">Григорьев Алексей Анатольевич</li>
+				<li><input type="checkbox">Корнеев Константин Владимирович</li>
+				<li><input type="checkbox">Корчашкин Сергей Николаевич</li>
+				<li><input type="checkbox">Мялкин Кирилл Сергеевич</li>
+				<li><input type="checkbox">Сысоев Александр Васильевич</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Сясь</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Меньшиков Илья Георгиевич</li>
+				<li><input type="checkbox">Пугачёв Дмитрий Алексеевич</li>
+				<li><input type="checkbox">Астротенко Андрей Викторович</li>
+				<li><input type="checkbox">Кондратьев Сергей Васильевич</li>
+				<li><input type="checkbox">Леонтьев Александр Николаевич</li>
+				<li><input type="checkbox">Меньшиков Георгий Николаевич</li>
+				<li><input type="checkbox">Тощаков Андрей Владимирович</li>
+			</ul>
+		</div>
+		<div>
+			<p class="name">ПС 330 кВ Тихвин-Литейный</p>
+			<ul class="hidden">
+				<li class="boss"><input type="checkbox">Варенцов Андрей Анатольевич</li>
+				<li><input type="checkbox">Ломунов Сергей Юрьевич</li>
+				<li><input type="checkbox">Белоусов Андрей Александрович</li>
+				<li><input type="checkbox">Гусаров Андрей Владимирович</li>
+				<li><input type="checkbox">Овсянников Антон Евгеньевич</li>
+				<li><input type="checkbox">Николичева Елена Борисовна</li>
+				<li><input type="checkbox">Тарасов Алексей Сергеевич</li>
+			</ul>
+		</div>		
+	</article>
+
+	<footer>
+		<a target="_blank" href="https://www.youtube.com/watch?v=XBPjVzSoepo&ab_channel=SpaceVideos"><img src="img/Constellation.svg"></a>
+		<a target="_blank" href="#">Телефоны на сайте</a>
+		<a target="_blank" href="file:///N:/User_Data/340/7.22/">Списки на OdsBOSS</a>
+	</footer>
+	<script src="js/foo.js" ></script>
+</div>
+</div>
+</body>
+</html>
