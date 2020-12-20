@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Схемы Карельской ЭС</title>
+		<!--<meta name="description" content="Tab Styles Inspiration: A small collection of styles for tabs" />
+		<meta name="keywords" content="tabs, inspiration, web design, css, modern, effects, svg" />
+		<meta name="author" content="Codrops" />
+		
+		<link rel="shortcut icon" href="../favicon.ico">-->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/tabs.css" />
+  		<script src="js/modernizr.custom.js"></script>
+   		<script src="js/foo.js"></script>
+  		<script src="js/jquery-2.1.4.js"></script>
+		<link href="dist/css/lightgallery.css" rel="stylesheet">
+	</head>
+	
+	
+	<body>
+	<div class="container">
+			<header class="codrops-header">
+				<img src="img/Karelia_Gerb.png" class="Gerb">
+				<h1>Карельское РДУ<span>управление режимом</span></h1>
+			</header>
+			<section>
+				<div class="tabs tabs-style-linetriangle">
+					<nav>
+						<ul>
+							<li><a href="#section-linetriangle-1"><span>Общая схема</span></a></li>
+							<li><a href="#section-linetriangle-2"><span>Автоматики</span></a></li>
+							<li><a href="#section-linetriangle-3"><span>Сечения</span></a></li>
+							<li><a href="#section-linetriangle-4"><span>Карта ЭС</span></a></li>
+						</ul>
+					</nav>
+					<div class="content-wrap">
+						<section id="section-linetriangle-1">
+							<div id="lightgallery" class="slider-slides">
+								<a href="img/MainSxem_Karel.svg" target="_blank"><img src="img/MainSxem_Karel.svg">
+							</div>
+						</section>
+						<section id="section-linetriangle-2">
+						<a href="img/MainSxem_Karel_PA.svg" target="_blank"><img src="img/MainSxem_Karel_PA.svg"></a>
+						</section>
+						<section id="section-linetriangle-3">
+							<!-- <div id="lightgallery" class="slider-slides">  -->
+						<a href="img/MainSxem_Karel_Sech.svg" target="_blank"><img src="img/MainSxem_Karel_Sech.svg"></a>
+							<!-- </div>  -->
+						</section>
+						<section id="section-linetriangle-4">
+							<!-- <div id="lightgallery" class="slider-slides">  -->
+						<a href="img/1.png" target="_blank"><img src="img/1.png">
+							<!-- </div>  -->
+						</section>
+					</div><!-- /content -->
+				</div><!-- /tabs -->
+			</section>
+	
+
+			
+			
+	</div><!-- /container -->
+	
+	<script src="js/cbpFWTabs.js"></script>
+	
+	<script>
+			(function() {
+
+				[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+					new CBPFWTabs( el );
+				});
+
+			})();
+	</script>
+			<script type="text/javascript">
+        $(document).ready(function(){
+            $('#lightgallery').lightGallery();
+        });
+        </script>
+
+        <script src="dist/js/lightgallery.js"></script>
+        <script src="dist/js/lg-zoom.js"></script>
+	</body>
+</html>

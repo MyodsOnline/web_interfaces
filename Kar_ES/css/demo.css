@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,500,700);
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	background: #e7ecea;
+	color: #74777b;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+}
+
+a {
+	color: #2CC185;
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover, a:focus {
+	color: #74777b;
+}
+
+.container{
+}
+.container > section {
+	padding: 3em 0;
+	font-size: 1.25em;
+	min-height: 100%;
+}
+
+p {
+	text-align: center;
+	padding: 1em;
+}
+
+/* Header */
+
+.Gerb{
+	display:block;
+	position:relative;
+	margin: 0 auto;
+	width:130px;
+	padding-bottom:1.5em;
+}
+.codrops-header {
+	padding: 1.5em 0 3em;
+	letter-spacing: -1px;
+	text-align: center;
+	font-family:Georgia;
+}
+.codrops-header h1 {
+	max-width: 1200px;
+	margin: 0 auto;
+	font-weight: 700;
+	font-size: 2.4em;
+	line-height: 1;
+	text-shadow: 1px 1px #fff, 2px 2px #666;
+}
+
+.codrops-header h1 span {
+	display: block;
+	font-size: 75%;
+	font-weight: 600;
+	padding-top: 0.25em;
+	color: #bdc2c9;
+	text-shadow: none;
+}
