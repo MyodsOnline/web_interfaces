@@ -1,0 +1,19 @@
+.colored{
+    text-align: center;
+    padding: 40px 20px;
+}
+.blckq{
+    align-self: center;
+}
+.ref{
+    padding: 20px;
+    width: 70%;
+    align-self: center;
+}
+.plue{
+    margin: 1.5rem auto!important;
+}
+
+.carousel-inner {
+    text-align: center;
+}
