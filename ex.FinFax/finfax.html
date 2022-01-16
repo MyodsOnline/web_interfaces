@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>ex.FinFax</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+<!-- Logo & login container -->
+    	<header class="row justify-content-md-center">
+	    	<div class="col-xxl-6 col-lg-8 col-md-10 col-sm-12 px-0">
+	    		<div class="navbar mt-2">
+					<div class="col-10">
+						<h1 class="text-center offset-2">ex.FinFax</h1>
+					</div>
+					<div class="col-2 justify-content-end">
+						<a class="btn btn-login-style d-flex shadow" href="#login_form"><img src="img/user-circle-regular.svg" class="ms-2 me-2" width="20px">Войти</a>
+					</div>
+				</div>
+			</div>
+    	</header>
+
+
+<!-- Create & send email container -->
+    	<div class="row justify-content-md-center">
+    		<div class="col-xxl-6 col-lg-8 col-md-10 col-sm-12 my_form py-3 rounded shadow">
+		    	<form class="" action="">
+					<div class="mb-3 row">
+						<div class="col-6 img_col pt-4">
+							<img src="https://www.so-ups.ru/fileadmin/files/graph/flags/so-ups125x125.jpg" class="img-thumbnail mx-auto d-block" width=187px>
+						</div>
+						<div class="col-6">
+							<div class="mb-1">
+								<label for="exampleInputEmail1" class="form-label_upd"><b>Номер сообщения</b></label>
+								<input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="8">
+							</div>
+							<div class="mb-1">
+								<label for="exampleInputPassword1" class="form-label_upd"><b>Дата</b></label>
+								<input type="date" class="form-control" id="exampleInputPassword1">
+							</div>
+							<div class="mb-1">
+								<label for="exampleInputPassword1" class="form-label_upd"><b>Время</b></label>
+								<input type="time" class="form-control" id="exampleInputPassword1">
+							</div>
+						</div>
+					</div>
+					<div class="mb-1">
+						<label for="exampleFormControlTextarea1" class="form-label_upd">Сообщение</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+					</div>
+					<div class="mb-2">
+						<label for="formFile" class="form-label_upd">Файл</label>
+						<input class="form-control" type="file" id="formFile">
+					</div>
+					<div class="mb-2">
+						<label for="exampleFormControlInput1" class="form-label_upd"><b>Емэйл</b></label>
+						<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="voimajarjestelma@fingrid.fi">
+					</div>
+					<div class="mb-2 form-outline">
+						<label for="exampleInputText" class="form-label_upd"><b>Автор</b></label>
+						<input type="text" class="form-control" id="exampleInputText" readonly>
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto mt-3">
+						<button class="btn btn-outline-secondary" type="submit">Сохранить и отправить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+<!-- Table with saved email container -->
+		<div class="row justify-content-md-center my-4">
+			<div class="col-xxl-6 col-lg-8 col-md-10 col-sm-12 table_style rounded shadow">
+				<h3 class="text-center pt-2">Отправленные сообщения</h3>
+				<table class="table">
+		            <thead>
+		                <tr>
+		                    <th class="text-center">Номер</th>
+		                    <th class="text-center">Дата</th>
+		                    <th class="text-center">Время</th>
+		                    <th class="text-center">Текст</th>
+		                    <th class="text-center">Файл</th>
+		                    <th class="text-center">Автор</th>
+		                </tr>
+		            </thead>
+	                <tbody class="rounded">
+	                	<tr>
+	                        <td>
+	                        	<a href="" target="_blank" class="num_ok">6</a>
+	                        </td>
+	                        <td>13.01.22</td>
+	                        <td>18:50</td>
+	                        <td>D358 M2 D353</td>
+	                        <td class="text-center">
+	                        	<a href="" target="_blank"></a>
+	                        </td>
+	                        <td>Kuznetsov</td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                        	<a href="" target="_blank" class="num_ok">4
+	                        		<span class="ok"> - ok</span>
+	                        		<span class="comment"> - !!!</span>
+	                        	</a>
+	                        </td>
+	                        <td>13.01.22</td>
+	                        <td>15:53</td>
+	                        <td></td>
+	                        <td class="text-center">
+	                        	<a href="link_to_saved_file" target="_blank" class="num_ok">
+	                        		<img src="img/file-alt-solid.svg" height="20px">
+	                        	</a>
+	                        </td>
+	                        <td>Bortsov</td>
+	                    </tr>
+	                    <tr>
+	                        <td>
+	                        	<a href="" target="_blank" class="num_ok">2<span class="ok"> - ok</span></a>
+	                        </td>
+	                        <td>13.01.22</td>
+	                        <td>09:40</td>
+	                        <td>D358 M2 D355 D351</td>
+	                        <td class="text-center">
+	                        	<a href="" target="_blank"></a>
+	                        </td>
+	                        <td>Kuznetsov</td>
+	                    </tr>
+	                </tbody>
+		        </table>
+        	</div>
+    	</div>
+
+<!-- Single email container -->
+    	<div class="row justify-content-md-center my-4">
+	    	<div class="card col-xxl-6 col-lg-8 col-md-10 col-sm-12 rounded shadow px-0">
+				<div class="card-header card-header_style"><h3 class="mb-0">Email #6 от 13.01.22 18:50</h3></div>
+				<div class="card-body">
+					<p class="card-text mb-0">Текст:<span class="text-muted fw-lighter fst-italic"> (если есть текст)</span></p>
+					<h4 class="card-title">D358 M2 D353</h4>
+					<p class="card-text mb-0">Файл:<span class="text-muted fw-lighter fst-italic"> (если есть файл)</span></p>
+					<h4 class="card-title"><a href="#">Path to file</a></h4>
+					<p class="card-text mb-0">Автор:</p>
+					<h4 class="card-title">Kuznetsov</h4>
+				</div>
+				<div class="card-footer card-footer_style">
+					<form>
+						<div class="form-check mb-2">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">Получено подтверждение</label>
+						</div>
+						<div class="mb-3 row">
+							<label for="inputText" class="col-sm-2 col-form-label">Комментарий</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="inputText">
+							</div>
+						</div>
+						<div class="d-grid gap-2 col-6 mx-auto mt-3">
+							<button class="btn btn-outline-secondary" type="submit">Сохранить</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+<!-- Login form container -->
+		<div class="row justify-content-md-center my-4" name="login_form">
+    		<div class="col-xxl-6 col-lg-8 col-md-10 col-sm-12 my_form pt-1 pb-3 rounded shadow">
+    			<form class="mt-0">
+    				<h3 class="text-center pt-2">Вход в систему</h3>
+					<div class="mb-3">
+						<label for="usernameInput" class="form-label mb-0">Имя пользователя</label>
+						<input type="text" class="form-control" id="usernameInput">
+					</div>
+					<!-- <div class="mb-3">
+						<label for="userInputPassword" class="form-label mb-0">Пароль</label>
+						<input type="password" class="form-control" id="userInputPassword">
+					</div> -->
+					<div class="d-grid gap-2 col-6 mx-auto mt-3">
+						<button class="btn btn-outline-secondary" type="submit">Войти</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+<!-- Examples of modal views -->
+		<div class="row justify-content-md-center my-4" name="login_form">
+    		<div class="col-xxl-6 col-lg-8 col-md-10 col-sm-12 my_form pt-1 rounded shadow">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header border-0">
+							<h5 class="modal-title_upd">Пользователь username вошел в систему</h5>
+							<button type="button" class="btn btn-outline-secondary">Закрыть</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header border-0">
+							<h5 class="modal-title_upd">Сообщение успешно отправлено</h5>
+							<button type="button" class="btn btn-outline-secondary">Закрыть</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header border-0">
+							<h5 class="modal-title_upd">При отправке сообщения возникли ошибки</h5>
+							<button type="button" class="btn btn-outline-secondary">Закрыть</button>
+						</div>
+					</div>
+				</div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header border-0">
+							<h5 class="modal-title_upd">Изменения успешно сохранены</h5>
+							<button type="button" class="btn btn-outline-secondary">Закрыть</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
