@@ -6,8 +6,13 @@
     border: 1px solid wheat;
 }
 
+.zvk_status {
+    display: flex;
+}
+
 .zvk_status ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 45%;
 }
