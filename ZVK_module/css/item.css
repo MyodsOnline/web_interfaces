@@ -1,0 +1,13 @@
+.item_control {
+    border: 1px solid blue;
+}
+
+.item_data {
+    border: 1px solid wheat;
+}
+
+.zvk_status ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
