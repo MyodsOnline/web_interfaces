@@ -4,6 +4,16 @@
     box-sizing: content-box;
 }
 
+.item_note{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#zvk_number{
+    width: 100px;
+}
+
 .zvk_status {
     display: flex;
 }
