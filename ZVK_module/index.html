@@ -25,51 +25,101 @@
 			<h3>Заявки на объекте</h3>
 			<div class="item">
 				<div class="item_control">
-					<div class="zvk_status">
-						<ul>
-							<li class="list list_active">
-								<input type="checkbox" checked>Открыта
-							</li>
-							<li class="list list_active">
-								<input type="checkbox" checked>Разрешена
-							</li>
-							<li class="list list_active">
-								<input type="checkbox">Рассмотрена
-							</li>
-							<li class="list">
-								<input type="checkbox">Закрыта
-							</li>
-						</ul>
-						<ul>
-							<li class="list list_active">
-								<input type="checkbox" checked>Все виды
-							</li>
-							<li class="list list_active">
-								<input type="checkbox" checked>Все сроки
-							</li>
-							<li class="list list_active">
-								<input type="checkbox">Все категории
-							</li>
-							<li class="list">
-								<a type="button">+фильтры</a>
-							</li>
-						</ul>
-					</div>
+					<form action="">
+						<div class="zvk_status">
+							<ul>
+								<li class="list list_active">
+									<input type="checkbox" checked>Открыта
+								</li>
+								<li class="list list_active">
+									<input type="checkbox" checked>Разрешена
+								</li>
+								<li class="list list_active">
+									<input type="checkbox">Рассмотрена
+								</li>
+								<li class="list">
+									<input type="checkbox">Закрыта
+								</li>
+							</ul>
+							<ul>
+								<li class="list list_active">
+									<input type="checkbox" checked>Все виды
+								</li>
+								<li class="list list_active">
+									<input type="checkbox" checked>Все сроки
+								</li>
+								<li class="list list_active">
+									<input type="checkbox" checked>Все категории
+								</li>
+								<li class="list">
+									<input type="number" name="zvk_number" id="">
+								</li>
+							</ul>
+						</div>
 					<button class="zvk_status_name">Обновить ( )</button>
+				</form>
 				</div>
 				<div class="item_data">
-					ITEM_DATA
+					<table class="table">
+						<thead>
+							<tr>
+								<th><a href="/">22945</a></th>
+								<th>НО</th>
+								<th>АВ</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2" class="unit_name">Комплект РЗА ВЭ 322 (АУВ, УРОВ, АОПН, УРОВ АОПН)</td>
+								<td><i>Разрешена</i></td>
+							</tr>
+							<tr>
+								<td>18:00 23.03.2022</td>
+								<td>18:00 28.03.2022</td>
+								<td>АГ - 04:00</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="table">
+						<thead>
+							<tr>
+								<th><a href="/">22945</a></th>
+								<th>НО</th>
+								<th>АВ</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="2" class="unit_name">Комплект РЗА ВЭ 322 (АУВ, УРОВ, АОПН, УРОВ АОПН)</td>
+								<td><i>Разрешена</i></td>
+							</tr>
+							<tr>
+								<td>18:00 23.03.2022</td>
+								<td>18:00 28.03.2022</td>
+								<td>АГ - 04:00</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				<a href="#">Celery seakale</a>
-				<p>Easy text</p>
+				<div class="item_note">
+					<a href="#">Показать все заявки</a>
+					<p>Форма для отображения поданых заявок.</p>
+				</div>
+				
 			</div>
 		</nav>
 		<div class="container">
 			<div class="main">
 				<section>
-					<button id="showLeft">Show/Hide Left Slide Menu</button>
+					<button id="showLeft" disabled class="disabled">Show/Hide Left Slide Menu</button>
 					<button id="showRight">Форма отображения заявок:</button>
 				</section>
+				<main>
+					<div class="tip">table:hover => show a little icon to run js script (copy inner text to make dispatcer note</div>
+					<div class="description">
+						Запрос на модернизацию ОИК-11 в рамках взаимодействия с SIM ЗРП.
+					</div>
+				</main>
 			</div>
 		</div>
 		<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
@@ -89,7 +139,7 @@
 			showRight.onclick = function() {
 				classie.toggle( this, 'active' );
 				classie.toggle( menuRight, 'cbp-spmenu-open' );
-				disableOther( 'showRight' );
+				// disableOther( 'showRight' );
 			};
 
 			function disableOther( button ) {
