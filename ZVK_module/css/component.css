@@ -1,6 +1,11 @@
 /* General styles for all menus */
+.cbp-spmenu-push{
+	background-image:url(../img/snap.PNG);
+	background-size: cover;
+}
+
 .cbp-spmenu {
-	background: rgba(0, 58, 60, .3);
+	background: rgba(200, 200, 200, 1);
 	position: fixed;
 	display: flex;
 	flex-direction: column;
