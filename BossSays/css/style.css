@@ -7,8 +7,7 @@ body {
 .container {
     height: 100vh;
     margin: 0 auto;
-    border: 1px solid black;
-    width: 900px;
+    width: 1050px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,7 +17,6 @@ header {
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid red;
     height: 50px;
     justify-content: center;
     align-items: center;
@@ -29,11 +27,22 @@ header h1 {
     margin: 0;
 }
 
+.tech {
+    display: flex;
+    width: 100%;
+}
+
+.tech .oneOfThree {
+    height: 20px;
+    background-image: url(../img/top.svg);
+    background-repeat: no-repeat;
+}
+
 main {
     display: flex;
     width: 100%;
+    height: calc(100vh - 160px);
     box-sizing: border-box;
-    border: 1px solid blue;
     flex-basis: 100%;
     flex-direction: row;
 }
@@ -42,27 +51,51 @@ main {
     overflow-y: auto;
 }
 
+main .oneOfThree {
+    margin-left: 5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+
+.content::-webkit-scrollbar {
+    width: 3px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: rgb(231, 231, 231);
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: rgb(94, 94, 94);
+    border-radius: 3px;
+}
+
 footer {
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid green;
     height: 100px;
     flex-direction: row;
 }
 
 .oneOfThree {
     display: flex;
-    padding: 0 5px;
-    width: 300px;
-    height: 100%;
-    border: 1px solid rgb(51, 255, 0);
+    padding-left: 5px;
+    width: 350px;
 }
 
 footer .oneOfThree {
     align-items: center;
+    background-image: url(../img/bottom.svg);
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+footer h3 {
+    margin-top: 35px;
+    padding: 0;
 }
 
 img {
-    margin: 0 15px;
+    margin: 10px 35px 0 20px;
 }
