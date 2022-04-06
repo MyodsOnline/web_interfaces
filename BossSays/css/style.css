@@ -39,7 +39,7 @@ main {
 }
 
 .content {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 footer {
