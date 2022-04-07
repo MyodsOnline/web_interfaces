@@ -91,6 +91,7 @@ footer .oneOfThree {
     background-image: url(../img/bottom.svg);
     background-repeat: no-repeat;
     height: 100%;
+    background-size: 100%;
 }
 
 footer h3 {
