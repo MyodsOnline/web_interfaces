@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-06-04T03:56:04.066Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15" etag="A__yA7gw9csq9_-AMsvx" version="19.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-04T14:27:08.595Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15" etag="b6Ev0GSXvJjVt9OIskU-" version="19.0.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="946" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
-        <mxCell id="t1qy27uWSAux4-Ufw2B2-0" value="Отключение плановое?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="100" y="240" width="180" height="80" as="geometry" />
+        <mxCell id="t1qy27uWSAux4-Ufw2B2-0" value="Отключение&lt;br&gt;плановое?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="180" y="220" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="t1qy27uWSAux4-Ufw2B2-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="t1qy27uWSAux4-Ufw2B2-2" target="t1qy27uWSAux4-Ufw2B2-4">
           <mxGeometry relative="1" as="geometry" />
@@ -14,22 +14,22 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="t1qy27uWSAux4-Ufw2B2-2" value="Сформировался ТС отключение ЛЭП" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="354" y="40" width="120" height="60" as="geometry" />
+          <mxGeometry x="340" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t1qy27uWSAux4-Ufw2B2-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="t1qy27uWSAux4-Ufw2B2-3" target="t1qy27uWSAux4-Ufw2B2-0">
+        <mxCell id="t1qy27uWSAux4-Ufw2B2-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="t1qy27uWSAux4-Ufw2B2-3" target="t1qy27uWSAux4-Ufw2B2-0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="t1qy27uWSAux4-Ufw2B2-3" value="Запрос диспетчеру" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="274" y="140" width="120" height="60" as="geometry" />
+          <mxGeometry x="180" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t1qy27uWSAux4-Ufw2B2-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="t1qy27uWSAux4-Ufw2B2-4" target="t1qy27uWSAux4-Ufw2B2-10">
+        <mxCell id="t1qy27uWSAux4-Ufw2B2-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="t1qy27uWSAux4-Ufw2B2-4" target="t1qy27uWSAux4-Ufw2B2-10">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="t1qy27uWSAux4-Ufw2B2-4" value="Запрос ОИК" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="434" y="140" width="120" height="60" as="geometry" />
+          <mxGeometry x="500" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="t1qy27uWSAux4-Ufw2B2-10" value="Есть замечания к режиму?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="554" y="240" width="180" height="80" as="geometry" />
+        <mxCell id="t1qy27uWSAux4-Ufw2B2-10" value="Есть&lt;br&gt;нарушение&lt;br&gt;режима?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="500" y="220" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
