@@ -17,6 +17,10 @@ header {
     background: cornsilk;
 }
 
+.header_button {
+    width: 80px;
+}
+
 #map {
     width: 100vw;
     height: 100vh;
