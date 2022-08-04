@@ -13,6 +13,9 @@ const panzoom = Panzoom(element, {
     minScale: 1,
 });
 
+if (panzoom.Scale == 5) {
+  console.log('KL')
+}
 
 const parent = element.parentElement
 parent.addEventListener('wheel', panzoom.zoomWithWheel);
