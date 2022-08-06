@@ -7,6 +7,8 @@ const UPASK = document.getElementById('UPASK')
 const UPASK_layer = document.getElementById('Layer3')
 const YV = document.getElementById('YV')
 const YV_layer = document.getElementById('Layer4')
+const ETL = document.getElementById('ETL')
+const ETL_layer = document.getElementById('Layer5')
 
 const panzoom = Panzoom(element, {
     maxScale: 10,
@@ -28,6 +30,9 @@ UPASK.addEventListener('click', () => {
 })
 YV.addEventListener('click', () => {
   YV_layer.classList.toggle('hidden')
+})
+ETL.addEventListener('click', () => {
+  ETL_layer.classList.toggle('hidden')
 })
 
 const st22 = document.querySelectorAll('.st22')
