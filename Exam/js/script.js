@@ -23,16 +23,16 @@ const parent = element.parentElement
 parent.addEventListener('wheel', panzoom.zoomWithWheel);
 reset.addEventListener('click', panzoom.reset)
 AOPO.addEventListener('click', () => {
- AOPO_layer.classList.toggle('hidden')
+ AOPO_layer.classList.toggle('st2')
 })
 UPASK.addEventListener('click', () => {
-  UPASK_layer.classList.toggle('hidden')
+  UPASK_layer.classList.toggle('st2')
 })
 YV.addEventListener('click', () => {
-  YV_layer.classList.toggle('hidden')
+  YV_layer.classList.toggle('st2')
 })
 ETL.addEventListener('click', () => {
-  ETL_layer.classList.toggle('hidden')
+  ETL_layer.classList.toggle('st2')
 })
 
 const st22 = document.querySelectorAll('.st22')
