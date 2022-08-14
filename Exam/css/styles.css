@@ -21,6 +21,7 @@ header {
     width: 80px;
 }
 
+
 #map {
     width: 100vw;
     height: 100vh;
@@ -31,6 +32,23 @@ header {
     justify-content: center; 
     flex-direction: column;  
 }
+
+.info {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100vh;
+    z-index: 10000;
+    background-color: aquamarine;
+}
+
 .hidden {
     display: none;
+}
+
+.st3 {
+    cursor: pointer;
 }
