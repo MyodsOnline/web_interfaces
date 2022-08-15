@@ -40,9 +40,12 @@ header {
     top: 0;
     right: 0;
     width: 500px;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 10000;
     background-color: aquamarine;
+    overflow-y: scroll;
+    height: -webkit-fill-available;
+    padding: 10px;;
 }
 
 .hidden {
@@ -51,4 +54,12 @@ header {
 
 .st3 {
     cursor: pointer;
+}
+
+.innerImage {
+    width: 100%;
+}
+
+.info ul {
+    list-style: none;
 }
