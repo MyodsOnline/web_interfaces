@@ -37,6 +37,10 @@ ETL.addEventListener('click', () => {
 })
 
 
+let APC_svg = [
+  document.getElementById('_x31_6'),
+]
+
 const showName = (event) => {
 	let el = event.target;
 	console.log(el);
@@ -44,10 +48,20 @@ const showName = (event) => {
 
 
 
-let aopo_tihlit = document.getElementById('infoBox')
+let info_block = document.getElementById('infoBox')
+let info_block_ars = document.getElementById('tixlit1')
 
+let aopo = document.getElementById('t10.1')
+let info_block_aopo = document.getElementById('tixlit2')
 
 
 APC.addEventListener('click', () => {
-  aopo_tihlit.classList.toggle('hidden')
+  info_block.classList.toggle('hidden');
+  info_block_ars.classList.toggle('hidden');
+  ETL_layer.classList.toggle('st2');
+});
+
+aopo.addEventListener('click', () => {
+  info_block.classList.toggle('hidden');
+  info_block_aopo.classList.toggle('hidden');
 });
