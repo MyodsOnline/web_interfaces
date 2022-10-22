@@ -194,12 +194,12 @@ table.dataTable th.dt-nowrap,
 table.dataTable td.dt-nowrap {
   white-space: nowrap;
 }
-table.dataTable thead th,
+/* table.dataTable thead th,
 table.dataTable thead td,
 table.dataTable tfoot th,
 table.dataTable tfoot td {
   text-align: left;
-}
+} */
 table.dataTable thead th.dt-head-left,
 table.dataTable thead td.dt-head-left,
 table.dataTable tfoot th.dt-head-left,
@@ -312,11 +312,11 @@ div.dataTables_wrapper div.dataTables_filter label {
   white-space: nowrap;
   text-align: left;
 }
-div.dataTables_wrapper div.dataTables_filter input {
+/* div.dataTables_wrapper div.dataTables_filter input {
   margin-left: 0.5em;
   display: inline-block;
   width: auto;
-}
+} */
 div.dataTables_wrapper div.dataTables_info {
   padding-top: 0.85em;
 }
