@@ -11605,7 +11605,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Последняя",
 	
 	
 				/**
@@ -11628,7 +11628,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Первая"
 			},
 	
 			/**
@@ -11651,7 +11651,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "По запросу ничего не найдено",
 	
 	
 			/**
@@ -11683,7 +11683,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Показано с _START_ по _END_ из _TOTAL_ записей",
 	
 	
 			/**
@@ -11923,7 +11923,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Поиск по-любому",
+			"sSearch": "Поиск по-любому: ",
 	
 	
 			/**
@@ -15640,9 +15640,9 @@ var DataTable = $.fn.dataTable;
 /* Set the defaults for DataTables initialisation */
 $.extend( true, DataTable.defaults, {
 	dom:
-		"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+		"<'row'<'searchline'l><'searchline'f>>" +
 		"<'row'<'col-sm-12'tr>>" +
-		"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+		"<'row'<'counter'i><'pagination'p>>",
 	renderer: 'bootstrap'
 } );
 
