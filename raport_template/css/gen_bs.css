@@ -1,0 +1,12 @@
+.container {
+    border: 1px solid red;
+}
+
+.new_p {
+    margin: 0;
+    font-size: .85em;
+}
+
+h4 {
+    margin-top: .5rem;
+}
