@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: antiquewhite;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+li {
+    padding: 0 15px;
+}
+
+p {
+    text-indent: 20px;
+    font-size: 1.2em;
+    margin-bottom: 6px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    padding: 10px;
+    height: calc(100vh - 115px);
+}
+
+.index_wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    padding: 0 30px;
+    overflow-y: scroll;
+    position: absolute;
+    padding-top: 50px;
+}
+
+table.reley {
+	width: 100%;
+	border-collapse:collapse;
+	border-spacing:0;
+    margin-top: 20px;
+}
+table.reley, table.reley td, table.reley th {
+	border: 1px solid #595959;
+}
+table.reley td, table.reley th {
+	padding: 6px;
+}
+
+table.reley td {
+    text-align: left;
+}
+
+table.reley th {
+	background: antiquewhite; 
+	font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+aside {
+    display: flex;
+}
+
+.svg_area {
+    display: block;
+    padding: 0 10px 10px 0;
+}
+
+.text_area {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    text-align: left;
+}
+
+circle{
+    cursor: pointer;
+}
+
+circle:hover{
+    fill: black !important;
+    fill-opacity: 1 !important;
+}
+
+@keyframes start_blink {
+    100%,
+    0% {fill: #500;}
+    50% {fill: rgb(0, 0, 0);}
+}
+.start_blink {
+    animation: blink 2s infinite;
+}
+
+.st_1 {
+    fill:#2acd2e;
+    fill-opacity:0.400844;
+    fill-rule:nonzero;
+    stroke:#3bd327;
+    stroke-width:0.899999;
+    stroke-dasharray:none;
+    stroke-opacity:1
+}
+
+.st_2 {
+    fill: black;
+    fill-opacity:1;
+    stroke: black;
+}
+
+#text_0 {
+    display: block;
+}
+#text_1, #text_2, #text_3, #text_4, #text_5, #text_6, #text_7, #text_8, #text_9, #text_10 {
+    display: none;
+}

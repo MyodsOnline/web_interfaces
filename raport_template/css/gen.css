@@ -1,0 +1,103 @@
+.wrapper {
+    display: flex;
+    width: 900px;
+    /* height: 100vh; */
+    margin: 0 auto;
+    padding: 20px 0;
+    flex-direction: column;
+}
+
+.table_st {
+    border-collapse:collapse;
+    border-spacing:0;
+    width: 100%;
+}
+
+.table_st th,
+.table_st td {
+    border: 1px solid black;
+    overflow:hidden;
+    word-break: normal;
+    padding: 7px;
+    vertical-align: bottom;
+}
+
+li:hover {
+    background: rgba(37, 54, 52, 0.3);
+}
+
+blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    padding: 0 2px 2px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    background-color: rgb(135, 222, 224, .6);
+}
+
+.item_status {
+    margin-bottom: 5px;
+    border-bottom: 1px solid darkblue;
+}
+
+.sub_item td:first-child {
+    padding-left: 20px;
+}
+
+.zvk {
+    justify-content: flex-start;
+}
+
+.zvk.zvk_none {
+    display: none;
+    border-top: none;
+}
+
+.not_viewed {
+    color: chocolate;
+}
+
+.allowed {
+    color: darkblue;
+}
+
+.opened {
+    color: green;
+}
+
+button {
+    width: 77px;
+    margin: 0;
+}
+
+.title {
+    font-size: 1.15em;
+}
+
+.title p {
+    margin: 0;
+}
+
+.title_sub {
+
+}

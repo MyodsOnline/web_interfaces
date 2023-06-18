@@ -11981,7 +11981,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "По запросу ничего не найдено"
 		},
 	
 	
