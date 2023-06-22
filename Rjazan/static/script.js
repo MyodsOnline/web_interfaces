@@ -1,15 +1,18 @@
 let rounds = document.getElementsByTagName('circle');
 let svg_area = document.getElementById('svg_area');
 
-// let timeline_collection = document.getElementById('layer1').children
+let timeline_collection = document.getElementsByTagName("circle");
 
-// timeline_points = []
-// for (let point of timeline_collection) {
-//     if (point.includes('circle')) {
-//         timeline_points.push(point);
-//     }    
-// };
-// timeline_points.forEach(p => console.log(p))
+let timeline_points = []
+
+for (let i = 0; i < timeline_collection.length; i++) {
+    const label = timeline_collection[i].getAttribute("inkscape:label");
+    if (label !== null) {
+        timeline_points.push(timeline_collection[i]);
+    }
+  }
+console.log(timeline_points)
+
 
 all_text = []
 let text = document.getElementsByClassName('single_text')
@@ -33,6 +36,8 @@ for (let item of rounds) {
 
         svg_img.remove();
         svg_area.insertAdjacentHTML('beforeend', `<img src="static/asset/img_${tmp}.svg" width="100%" height="100%" id="svg_img">`);
+        
+        setFillToBlack(tmp)
     }
 
 
@@ -44,3 +49,10 @@ function drop_all() {
     });
 }
 
+function setFillToBlack(timeline_points, tmp) {
+    for (var i = 0; i < timeline_points.length; i++) {
+      if (timeline_points[i] < tmp) {
+        timeline_points[i].style.fill = 'black';
+      }
+    }
+  }
