@@ -56,3 +56,4 @@ function setFillToBlack(timeline_points, tmp) {
       }
     }
   }
+  
