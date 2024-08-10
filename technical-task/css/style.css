@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 200px 1fr;
+}
+
+.logo {
+    margin: 10px auto;
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.settings {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+        display: flex;
+        border-radius: 5px;
+        margin: 5px;
+        background-color: floralwhite;
+        padding: 5px 5px 5px 10px;
+        box-shadow: 0 5px 10px -5px rgba(0, 0, 0,.7);
+    }
+}
+
+input.btn {
+    border: none;
+    height: 36px;
+    font-size: 14px;
+}
+
+main {
+    background-color: beige;
+}
+
+.cust_dis {
+    opacity: 0;
+    margin-right: -2px;
+}
+
+.cust_act {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    margin-left: -15px;
+    margin-top: 4px;
+    border: 1px solid rgb(196, 7, 7);
+}
+
+.cust_dis:checked ~ .cust_act {
+    background-color: red;
+    box-shadow: 0 0 3px 1px deeppink;
+}
+
+.label_for_checkbox {
+    display: flex;
+    cursor: pointer;
+}
+.active {
+    background-color: aquamarine;
+}
+
+.info {
+    display: flex;
+    border-radius: 5px;
+    margin: 5px 5px 15px;
+    background-color: floralwhite;
+    padding: 5px 5px 5px 10px;
+    box-shadow: 0 -5px 10px -5px rgba(0, 0, 0,.7);
+}
+
+.sheme {
+    display: flex;
+    width: 80vw;
+}
+
+svg path,
+svg rect {
+    cursor: pointer;
+}
