@@ -86,7 +86,7 @@ nav {
 
 .styled {
     width: 250px;
-    border: 1px solid rgb(40, 93, 229);
+    border: none;
     line-height: 2.5;
     padding: 0 20px;
     font-size: 1rem;
@@ -105,12 +105,14 @@ nav {
     }
   
 .styled:active {
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6);
+    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.6);
     }
 
 .svg_scheme {
     display: flex;
-    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.6);
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.6);
     margin: 0 45px;
     border-radius: 7px;
     height: calc(100vh - 170px);
