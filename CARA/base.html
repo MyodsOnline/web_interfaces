@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="http://www.figma.com/design/klm9m4Wofih7evl5xAzehp/САРА?node-id=38-5932&t=Yqu3YyD5LNVM2EOG-0">
+                Выбор расчетной схемы
+            </a>
+        </header>
+        <main>
+            <nav>
+                <div class="date_time_select_block">
+                    <div class="datetime-local_selector">
+                        <p>Дата и время расчета: </p>
+                        <div class="datetime-wrapper">
+                            <input 
+                                type="datetime-local" 
+                                id="datetime-select" 
+                                name="datetime-select"
+                                value="2024-08-12T19:30" />
+                            <span class="datetime-icon">🕒</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons_block">
+                    <button class="styled secondary" type="button">Задать потребление ЭС</button>
+                    <button class="styled primary" type="button">Перейти к выбору АП</button>
+                </div>
+            </nav>
+            <div class="svg_scheme">
+                <svg width="200" height="200" viewBox="-100 -100 200 200">
+                    <polygon points="0,0 80,120 -80,120" fill="#234236" />
+                    <polygon points="0,-40 60,60 -60,60" fill="#0C5C4C" />
+                    <polygon points="0,-80 40,0 -40,0" fill="#38755B" />
+                    <rect x="-20" y="120" width="40" height="30" fill="brown" />
+                  </svg>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

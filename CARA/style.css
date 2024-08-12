@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(43, 46, 51);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(35, 39, 42);
+    padding: 15px 45px;
+}
+
+header a {
+    color: azure;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline;
+    width: fit-content;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background-color: rgb(44, 46, 51);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date_time_select_block, .buttons_block {
+    display: flex;
+    padding: 15px 45px;
+}
+
+.datetime-local_selector {
+    display: flex;
+    background-color: rgb(35, 39, 42);
+    color: white;
+    padding: 7px 15px;
+    font-weight: 100;
+    border-radius: 7px;
+    align-items: baseline;
+}
+
+.datetime-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.datetime-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px; /* Расстояние от правого края input */
+    pointer-events: none; /* Чтобы иконка не мешала кликам на input */
+    color: gray;
+    font-size: 1.2em; /* Размер иконки */
+}
+
+#datetime-select {
+    background-color: rgb(43, 46, 51);
+    margin: 0 0 0 15px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: white;
+    border-radius: 7px;
+    border: 0;
+    padding: 9px 40px 9px 10px;
+    font-weight: 100;
+}
+
+.styled {
+    width: 250px;
+    border: 1px solid rgb(40, 93, 229);
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 7px;
+    margin-left: 15px;
+    }
+
+.secondary {
+    background-color: rgb(44, 46, 51)
+    }
+  
+.secondary:hover, .primary {
+    background-color: rgb(40, 93, 229);
+    }
+  
+.styled:active {
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6);
+    }
+
+.svg_scheme {
+    display: flex;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.6);
+    margin: 0 45px;
+    border-radius: 7px;
+    height: calc(100vh - 170px);
+}
