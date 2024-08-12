@@ -11,9 +11,20 @@ function updateClock() {
     minutes = (minutes < 10 ? "0" : "") + minutes;
     seconds = (seconds < 10 ? "0" : "") + seconds;
 
+    console.log(Number(minutes), Number(seconds), Number(hours))
 
     var timeString = year + "." + mounth + "." + day + " " + hours + ":" + minutes + ":" + seconds
     document.getElementById("clock").innerHTML = timeString;
+
+    var bigBan = document.getElementById("clock");
+    
+    // if (bigBan.classList.contains('newClass')) {
+    //   bigBan.classList.remove('newClass')
+    // }
+    
+    // if (Number(minutes), Number(seconds), Number(hours)) {
+    //   bigBan.classList.add("newClass");
+    // }
 
     if (hours > 7 && hours < 18) {
         if (hours < 12) {

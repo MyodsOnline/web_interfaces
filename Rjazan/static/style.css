@@ -164,4 +164,7 @@ circle:hover{
     visibility: visible;
     opacity: 1;
 }
-  
+
+.righter {
+    color: darkgreen;
+}

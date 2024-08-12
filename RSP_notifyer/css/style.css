@@ -95,3 +95,7 @@ main h1 {
 .right {
     color:brown;
 }
+.newClass {
+    font-size: xx-large;
+    color: greenyellow;
+}

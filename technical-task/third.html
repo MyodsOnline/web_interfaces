@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <!-- <link rel="stylesheet" href="css/style.css"> -->
+   <link rel="stylesheet" href="css/select2.min.css">
+</head>
+<body>
+   <div class="wrapper">
+
+      <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+         <option value="AL">Select2 also supports multi-value select boxes.</option>
+         <option value="ML">Select2 provides multiple builds that are tailored to different environments where it is going to be used</option>
+         <option value="WY">like when you are using AMD, you should read over the list below</option>
+         <option value="NY">You should only use this build if you need the recommended includes </option>
+       </select>
+
+   </div>
+   <script src="js/jquery-3.6.0.min.js"></script>
+   <script src="js/select2.min.js"></script>
+   <script>
+      $(document).ready(function() {
+         $('.js-example-basic-multiple').select2();
+      });
+   </script>
+</body>
+</html>
