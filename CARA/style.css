@@ -44,7 +44,7 @@ nav {
 
 .date_time_select_block, .buttons_block {
     display: flex;
-    padding: 15px 45px;
+    padding: 10px 45px;
 }
 
 .datetime-local_selector {
@@ -82,6 +82,7 @@ nav {
     border: 0;
     padding: 9px 40px 9px 10px;
     font-weight: 100;
+    cursor: pointer;
 }
 
 .styled {
@@ -94,25 +95,28 @@ nav {
     color: #fff;
     border-radius: 7px;
     margin-left: 15px;
-    }
+    cursor: pointer;
+}
 
 .secondary {
-    background-color: rgb(44, 46, 51)
+    background-color: rgb(44, 46, 51);
+    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.8);
     }
   
 .secondary:hover, .primary {
     background-color: rgb(40, 93, 229);
+    box-shadow: none;
     }
   
 .styled:active {
-    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.6);
+    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.8);
     }
 
 .svg_scheme {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.6);
+    box-shadow: inset 2px 2px 3px rgba(35, 39, 42, 0.8);
     margin: 0 45px;
     border-radius: 7px;
     height: calc(100vh - 170px);
