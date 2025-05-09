@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пометочник</title>
+    <link rel="stylesheet" type="text/css" href="css/helper.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Пометочник</h1>
+        
+        <div class="form-row">
+            <div class="label">Устройство, выводимое из работы</div>
+            <div class="input-container">
+                <input type="text" id="item" class="input-field" placeholder="Введите устройство">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Состояние по завершению переключений</div>
+            <div class="input-container">
+                <select id="condition" class="select-field">
+                    <option value="">Выберите состояние</option>
+                    <option value="op">оперативно</option>
+                    <option value="lk">для технического обслуживания</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-row form-row-upd">
+            <div class="label">Диспетчерские заявки</div>
+            <div class="input-container" id="apps-container">
+                <div class="app-item">
+                    <input type="text" id="app_1" class="input-field" placeholder="Заявка №1">
+                </div>
+                <div class="app-item">
+                    <input type="text" id="app_2" class="input-field" placeholder="Заявка №2">
+                </div>
+            </div>
+            <div class="add-button" id="add-app-more">+</div>
+        </div>
+
+        <div class="form-row">
+            <div class="label">Срок окончания работ по заявке</div>
+            <div class="input-container">
+                <input type="text" id="time_end" class="input-field" placeholder="Время окончания работ">
+                <p style="margin: 0 0 0 7px;">АГ</p>
+                <input type="text" id="ag" class="input-field" placeholder="А/Г" style="width: 80px; margin-left: 5px;">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Используемая программа переключений</div>
+            <div class="input-container">
+                <input type="text" id="document" class="input-field white-input" placeholder="Документ">
+            </div>
+        </div>
+        
+        <div class="form-row form-row-upd">
+            <div class="label">Объекты переключений</div>
+            <div class="input-container" id="object-container">
+                <div class="obj-item">
+                    <input type="text" id="obj_1" class="input-field white-input" placeholder="Объект №1">
+                </div>
+                <div class="obj-item">
+                    <input type="text" id="obj_2" class="input-field white-input" placeholder="Объект №2">
+                </div>
+            </div>
+            <div class="add-button" id="add-obj-more">+</div>
+        </div>
+        
+        <div id="additional-objs"></div>
+        
+        <div class="form-row">
+            <div class="label">Время начала переключений</div>
+            <div class="input-container">
+                <input type="text" id="action_start" class="input-field white-input" placeholder="Время начала переключений">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Время окончания переключений</div>
+            <div class="input-container">
+                <input type="text" id="action_end" class="input-field white-input" placeholder="Время окончания переключений">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="label">Комментарий</div>
+            <div class="input-container">
+                <input type="text" id="comment" class="input-field white-input" placeholder="Комментарий">
+            </div>
+        </div>
+        
+        <div class="record-section">
+            <h3>Запись для оперативного журнала ёЖ-3</h3>
+            <div class="record-container">
+                <div class="editable-record" id="journal-record" contenteditable="true"></div>
+                <button class="copy-button" id="copy-journal">Скопировать</button>
+            </div>
+            
+            <h3>Запись для диспетчерской пометки</h3>
+            <div class="record-container">
+                <div class="editable-record" id="dispatch-record" contenteditable="true"></div>
+                <button class="copy-button" id="copy-dispatch">Скопировать</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/helper.js" ></script>
+</body>
+</html>
