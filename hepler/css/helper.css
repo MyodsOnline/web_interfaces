@@ -135,25 +135,30 @@ body {
 }
 
 .nav-link {
-    padding: 10px 20px;
-    margin: 0 10px;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #808080;
+    background-color: transparent;
+    cursor: pointer;
+    height: fit-content;
+    white-space: nowrap;
+    font-size: 12px;
+    text-align: center;
+    width: 100px;
     text-decoration: none;
     color: #333;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
 .nav-link:hover {
     background-color: #e0e0e0;
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
 }
 
 .nav-link.active {
-    background-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.5);
     color: white;
-    border-color: #4CAF50;
 }
 
 h1 {
