@@ -177,71 +177,15 @@ h3 {
 
 @media (max-width: 768px) {
   body {
-    margin: 10px 0;
-    padding: 0;
+    margin: 20px 0; /* Уменьшаем отступы на мобильных */
   }
   
   .main-container {
-    max-width: none;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-    padding: 10px;
-    border-left: none;
-    border-right: none;
-  }
-  
-  .form-row {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 15px;
-  }
-  
-  .label, .form-row-upd .label {
-    width: 100%;
-    margin-bottom: 5px;
-    padding-right: 0;
-    font-size: 13px;
-  }
-  
-  .input-container {
-    width: 100%;
-    flex-direction: column;
-  }
-  
-  .app-item, .obj-item {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 5px;
-  }
-  
-  .input-field, .select-field {
-    width: 100%;
-    margin-bottom: 5px;
-  }
-  
-  .add-button {
-    align-self: flex-end;
-    margin-top: 5px;
-  }
-  
-  .record-container {
-    flex-direction: column;
-  }
-  
-  .copy-button {
-    margin-left: 0;
-    margin-top: 10px;
-    width: 100%;
-  }
-  
-  .navigation {
-    flex-wrap: wrap;
-    padding: 10px 0;
-  }
-  
-  .nav-link {
-    margin: 5px;
-    width: calc(50% - 10px);
+    max-width: none; /* Отменяем ограничение по ширине */
+    width: 99vw; /* Занимаем почти всю ширину экрана */
+    margin: 0 auto; /* Центрируем */
+    box-sizing: border-box; /* Учитываем padding в общей ширине */
+    border-radius: 0; /* Убираем скругление для мобильных (опционально) */
+    padding: 15px 10px; /* Можно настроить padding для мобильных */
   }
 }
