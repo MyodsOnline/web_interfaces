@@ -150,7 +150,7 @@ function updateRecords() {
     }
     
     // Обновляем запись на странице
-    document.getElementById('journal-record').innerHTML = journalRecord;
+    document.getElementById('journal-close-record').innerHTML = journalRecord;
 }
 
 // Обработчики событий для полей ввода
@@ -160,16 +160,13 @@ inputs.forEach(input => {
 });
 
 // Добавляем обработчики событий для сохранения изменений в полях
-document.getElementById('journal-record').addEventListener('input', function() {
-});
-
-document.getElementById('dispatch-record').addEventListener('input', function() {
+document.getElementById('journal-close-record').addEventListener('input', function() {
 });
 
 // Копирование в буфер обмена
-document.getElementById('copy-journal').addEventListener('click', function() {
+document.getElementById('copy-close').addEventListener('click', function() {
     const btn = this;
-    const text = document.getElementById('journal-record').innerText;
+    const text = document.getElementById('journal-close-record').innerText;
     navigator.clipboard.writeText(text)
         .then(() => {
             const originalText = btn.textContent;
@@ -181,6 +178,20 @@ document.getElementById('copy-journal').addEventListener('click', function() {
         .catch(err => console.error('Ошибка копирования: ', err));
 });
 
+// Копирование в буфер обмена
+document.getElementById('copy-close').addEventListener('click', function() {
+    const btn = this;
+    const text = document.getElementById('journal-close-record').innerText;
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            const originalText = btn.textContent;
+            btn.textContent = 'Готово!';
+            setTimeout(() => {
+                btn.textContent = originalText;
+            }, 5000);
+        })
+        .catch(err => console.error('Ошибка копирования: ', err));
+});
 
 
 // Функция инициализации
