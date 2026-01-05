@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Ссылочник</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+	
+<body>
+	<div class="container">
+		<div class="tree_box">
+			<div class="personnel-container">
+				<!-- Списки организаций и персонала генерируются динамически через JavaScript -->
+			</div>
+		</div>
+	</div>
+<script src="personel.js"></script>
+<script>
+// Генерация HTML для организаций и персонала
+function generateOrganizationsHTML() {
+    const container = document.querySelector('.personnel-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // Проходим по каждой категории
+    Object.keys(organizationsData).forEach((categoryName, categoryIndex) => {
+        // Создаем блок категории
+        const categoryBlock = document.createElement('div');
+        categoryBlock.className = 'category-block';
+        
+        // Заголовок категории
+        const categoryTitle = document.createElement('div');
+        categoryTitle.className = 'category-title';
+        categoryTitle.textContent = categoryName;
+        categoryBlock.appendChild(categoryTitle);
+        
+        // Контейнер для организаций в категории
+        const organizationsContainer = document.createElement('div');
+        organizationsContainer.className = 'organizations-container';
+        
+        // Проходим по каждой организации в категории
+        const organizations = organizationsData[categoryName];
+        Object.keys(organizations).forEach(orgName => {
+            const orgBlock = document.createElement('div');
+            orgBlock.className = 'object-block';
+            orgBlock.dataset.organization = orgName;
+            orgBlock.dataset.category = categoryName;
+            
+            const title = document.createElement('div');
+            title.className = 'title';
+            
+            const titleText = document.createElement('span');
+            titleText.className = 'title-text';
+            titleText.textContent = orgName;
+            title.appendChild(titleText);
+            
+            const selectedDisplay = document.createElement('div');
+            selectedDisplay.className = 'selected-personnel';
+            selectedDisplay.style.display = 'none';
+            title.appendChild(selectedDisplay);
+            
+            const personnelList = document.createElement('div');
+            personnelList.className = 'personnel-list';
+            
+            organizations[orgName].forEach(personName => {
+                const label = document.createElement('label');
+                label.className = 'personnel-item';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'radio';
+                checkbox.name = `personnel-${categoryName}-${orgName}`;
+                checkbox.value = personName;
+                
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = personName;
+                
+                label.appendChild(checkbox);
+                label.appendChild(nameSpan);
+                personnelList.appendChild(label);
+            });
+            
+            orgBlock.appendChild(title);
+            orgBlock.appendChild(personnelList);
+            organizationsContainer.appendChild(orgBlock);
+        });
+        
+        categoryBlock.appendChild(organizationsContainer);
+        container.appendChild(categoryBlock);
+    });
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    generateOrganizationsHTML();
+    
+    const blocks = document.querySelectorAll('.object-block');
+    
+    blocks.forEach(block => {
+        const title = block.querySelector('.title');
+        const list = block.querySelector('.personnel-list');
+        const selectedDisplay = title.querySelector('.selected-personnel');
+        const orgName = block.dataset.organization;
+        
+        // Обработчик клика на название организации
+        title.addEventListener('click', (e) => {
+            // Не открываем/закрываем список при клике на selected-personnel
+            if (e.target.classList.contains('selected-personnel')) {
+                return;
+            }
+            
+            const isOpen = list.style.display === 'block';
+            
+            if (isOpen) {
+                // Если список открыт, сворачиваем его
+                list.style.display = 'none';
+            } else {
+                // Если список закрыт, открываем его
+                list.style.display = 'block';
+            }
+        });
+        
+        // Обработчик выбора персонала
+        list.addEventListener('change', (e) => {
+            if (e.target.type === 'radio' && e.target.checked) {
+                const selectedName = e.target.value;
+                const label = e.target.closest('label');
+                
+                // Сохраняем выбранного сотрудника
+                block.dataset.selectedPersonnel = selectedName;
+                
+                // Отображаем выбранного сотрудника с стрелкой
+                selectedDisplay.innerHTML = selectedName + ' <span class="copy-arrow">→</span>';
+                selectedDisplay.dataset.personnelName = selectedName; // Сохраняем имя для копирования
+                selectedDisplay.style.display = 'block';
+                
+                // Меняем фон блока title
+                title.classList.add('has-selected-personnel');
+                
+                // Меняем фон блока организации
+                block.classList.add('has-selection');
+                
+                // Сворачиваем список
+                setTimeout(() => {
+                    list.style.display = 'none';
+                }, 100);
+            }
+        });
+        
+        // Предотвращаем закрытие списка при клике на элементы списка
+        list.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        // Обработчик клика на стрелку для копирования в буфер обмена
+        selectedDisplay.addEventListener('click', (e) => {
+            if (e.target.classList.contains('copy-arrow')) {
+                const personnelName = selectedDisplay.dataset.personnelName || selectedDisplay.textContent.replace('→', '').trim();
+                
+                // Копируем в буфер обмена
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(personnelName).then(() => {
+                        // Визуальная обратная связь
+                        const originalText = e.target.textContent;
+                        e.target.textContent = '✓';
+                        setTimeout(() => {
+                            e.target.textContent = originalText;
+                        }, 1000);
+                    }).catch(err => {
+                        console.error('Ошибка копирования:', err);
+                        // Fallback для старых браузеров
+                        copyToClipboardFallback(personnelName);
+                    });
+                } else {
+                    // Fallback для старых браузеров
+                    copyToClipboardFallback(personnelName);
+                }
+                
+                e.stopPropagation();
+            }
+        });
+        
+        // Функция fallback для копирования
+        function copyToClipboardFallback(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Ошибка копирования:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    });
+});
+</script>
+</body>
+</html>
