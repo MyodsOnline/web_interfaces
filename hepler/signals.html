@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система сигнализации - Отображение сигналов</title>
+    <link rel="stylesheet" type="text/css" href="css/signals.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Навигация -->
+        <div class="navigation">
+            <a href="index.html" class="nav-link">Открыватель</a>
+            <a href="close.html" class="nav-link">Закрыватель</a>
+            <a href="signals.html" class="nav-link active">Сигналы</a>
+        </div>
+
+        <!-- Фильтры -->
+        <div class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="kpos">КПОС</button>
+                <button class="filter-btn" data-filter="mtn">МТН</button>
+                <button class="filter-btn" data-filter="mun">МУН</button>
+                <button class="filter-btn" data-filter="skam">СКАМ</button>
+                <button class="filter-btn" data-filter="ts-io">ТС I/O</button>
+                <button class="filter-btn" data-filter="fbrdu">FБРДУ</button>
+                <button class="filter-btn" data-filter="rv">РВ</button>
+                <button class="filter-btn" data-filter="pur-smzu">ПУР/СМЗУ</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Поиск">
+                <button class="clear-search" id="clear-search">×</button>
+            </div>
+        </div>
+
+        <!-- Основная таблица сигналов -->
+        <div class="signals-table-container">
+            <table class="signals-table">
+                <thead>
+                    <tr>
+                        <th>Источник</th>
+                        <th>Время</th>
+                        <th>Объект</th>
+                        <th>Сообщение</th>
+                        <th>Просмотреть</th>
+                        <th>Квитировать</th>
+                        <th>Удалить</th>
+                    </tr>
+                </thead>
+                <tbody id="signals-tbody">
+                    <!-- Данные будут добавлены через JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Группированные секции -->
+        <div class="grouped-sections">
+            <!-- Секция ЖДИ -->
+            <div class="group-section" id="zhdy-section">
+                <div class="group-header" data-group="zhdy">
+                    <span class="pin-icon">📌</span>
+                    <span class="group-title">ЖДИ</span>
+                    <span class="collapse-icon">▶</span>
+                </div>
+                <div class="group-content" id="zhdy-content">
+                    <table class="group-table">
+                        <thead>
+                            <tr>
+                                <th>Источник</th>
+                                <th>Время</th>
+                                <th>Объект</th>
+                                <th>Сообщение</th>
+                                <th>Просмотреть</th>
+                                <th>Квитировать</th>
+                                <th>Удалить</th>
+                            </tr>
+                        </thead>
+                        <tbody id="zhdy-tbody">
+                            <!-- Данные ЖДИ будут добавлены через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Секция СКАМ -->
+            <div class="group-section" id="skam-section">
+                <div class="group-header" data-group="skam">
+                    <span class="pin-icon">📌</span>
+                    <span class="group-title">СКАМ</span>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="group-content collapsed" id="skam-content">
+                    <table class="group-table">
+                        <thead>
+                            <tr>
+                                <th>Источник</th>
+                                <th>Время</th>
+                                <th>Объект</th>
+                                <th>Сообщение</th>
+                                <th>Просмотреть</th>
+                                <th>Квитировать</th>
+                                <th>Удалить</th>
+                            </tr>
+                        </thead>
+                        <tbody id="skam-tbody">
+                            <!-- Данные СКАМ будут добавлены через JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/signals.js"></script>
+</body>
+</html>
