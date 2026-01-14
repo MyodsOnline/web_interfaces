@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 20px;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+.section {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #667eea;
+}
+
+.income-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.income-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.income-item strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.income-item .amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+    margin-top: 5px;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.expense-table th {
+    background: #667eea;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.expense-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.expense-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 600;
+    background: #f8f9fa;
+}
+
+.expense-table .amount {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.highlight {
+    background: #fff3cd;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #ffc107;
+    font-size: 14px;
+}
+
+.highlight strong {
+    color: #856404;
+}
+
+.students-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+}
+
+.students-table {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.students-table th {
+    background: #667eea;
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+.students-table th:first-child {
+    position: sticky;
+    left: 0;
+    background: #667eea;
+}
+
+.students-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.students-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.students-table .number {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+}
+
+.students-table .name {
+    min-width: 200px;
+}
+
+.students-table .balance {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    min-width: 100px;
+    font-size: 1.1em;
+}
+
+.balance-positive {
+    color: #28a745;
+}
+
+.balance-negative {
+    color: #dc3545;
+}
+
+.balance-zero {
+    color: #666;
+}
+
+.contribution-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+}
+
+.contribution-table {
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.contribution-table th {
+    background: #28a745;
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.contribution-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.contribution-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.contribution-table .amount-th,
+.students-table .balance-th {
+    text-align: right;
+    color: white;
+}
+
+.contribution-table .amount {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #28a745;
+    font-size: 1.1em;
+}
+
+.contact-info {
+    background: #e7f3ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.contact-info .phone {
+    font-size: 18px;
+    font-weight: 600;
+    color: #667eea;
+    margin-top: 5px;
+}
+
+.contact-info a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.messengers {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    align-items: start;
+}
+
+.messengers img {
+    flex: 1;
+    width: 0;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        border-radius: 8px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .income-item .amount {
+        font-size: 20px;
+    }
+
+    .expense-table {
+        font-size: 12px;
+    }
+
+    .expense-table th,
+    .expense-table td {
+        padding: 8px 6px;
+    }
+
+    .students-table,
+    .contribution-table {
+        font-size: 12px;
+    }
+
+    .students-table th,
+    .students-table td,
+    .contribution-table th,
+    .contribution-table td {
+        padding: 8px 6px;
+    }
+
+    .messengers {
+        gap: 10px;
+    }
+
+    .messengers img {
+        height: 45px;
+    }
+}
+
